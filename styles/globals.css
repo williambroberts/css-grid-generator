@@ -126,7 +126,7 @@
     }
     
     ::-webkit-scrollbar {
-      width: 20px;
+      width: 18px;
     }
     
     /* Track */
@@ -151,7 +151,7 @@
       top:0px;
       flex:1 1 auto;
       height: 100%;
-      background-color: var(--bg-4);
+      background-color: var(--bg-1);
       display: grid;
       grid-template-columns: 1fr;
       padding-top: 120px;

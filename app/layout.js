@@ -3,6 +3,7 @@ import ProviderForTheme from '@/components/themes/themeProvider'
 import '../styles/globals.css'
 import '../styles/header.css'
 import "../styles/misc.css"
+import "../styles/grid.css"
 import "../styles/animations.css"
 import { Inter } from 'next/font/google'
 import Header from '@/components/header/header'

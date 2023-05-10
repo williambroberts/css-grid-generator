@@ -1,9 +1,9 @@
 import React from 'react'
-import Typewriter from "typewriter-effect";
+//import Typewriter from "typewriter-effect";
 const SideTypewriter = () => {
   return (
     <div>
-    <Typewriter
+    {/* <Typewriter
        options={{
         deleteSpeed:'natural',
         loop: true
@@ -20,7 +20,8 @@ const SideTypewriter = () => {
        .pauseFor(2000)
        .start();
        }}
-       />
+       /> */}
+       Web Developer
     </div>
   )
 }
