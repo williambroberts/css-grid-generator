@@ -1,0 +1,42 @@
+header {
+    font-size: var(--font-size-14);
+    width:100vw;
+    background-color: var(--bg-4);
+    display: block;
+    height: 80px;
+    position: fixed;
+    top: 0px;
+    left:0px;
+    padding: 1.5rem 0rem;
+    box-sizing: border-box;
+    border-bottom: 1px solid var(--bg-3);
+    z-index: 1;
+
+}
+
+header > nav {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    position: relative;
+    gap: 8px;
+    justify-content: flex-start;
+
+}
+
+.theme-button {
+    margin-left: auto;
+}
+
+.header-right {
+    margin-right: 24px;
+}
+.hamburger-blur {
+    height: 100dvh;
+    position: absolute;
+    background-color:rgba(56, 57, 59,0.8) ;
+    cursor: pointer;
+    width: calc(100vw-265px);
+}
+
+/*  */

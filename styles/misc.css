@@ -1,0 +1,79 @@
+/* self-component */
+
+.self {
+    margin-left: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 0.5rem;
+    padding: 0rem;
+    border: none;
+    background-color: transparent;
+}
+
+.self-top {
+    display: flex;
+    gap: 8px;
+    width: auto;
+    align-items: center;
+    justify-content: flex-start;
+    align-items: center;
+    justify-content: flex-end;
+
+}
+
+.self-photo {
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    background-image:url("../public/images/2020-02-26.jpg") ;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 1px solid var(--bg-1);
+    box-sizing: border-box;
+}
+
+.self-heading {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    text-decoration: none;
+    font-weight: 600;
+    color: var(--t-2);
+    font-size: var(--font-size-14);
+}
+.self-heading > span {
+    line-height: 20px;
+}
+.self-profession {
+    font-weight: 400;
+    color: var(--t-3);
+}
+
+
+.header-mid {
+    margin-left: auto;
+}
+/* theme button */
+.theme-button {
+  
+    background-color: transparent;
+    border: none;
+    box-sizing: border-box;
+    cursor: pointer;
+    color: var(--t-1);
+    font-size: var(--font-size-20);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 0.5rem;
+  }
+  /* theme button */
+  .theme-button:hover {
+    color: var(--t-3);
+    transition: var(--transition-1);
+  }
