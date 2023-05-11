@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import {v4 as uuidv4} from "uuid"
 import GridFields from './gridFields'
-
+import colors from './colors.json'
 const Grid = () => {
     const [rowNumber,setRowNumber]=useState(0)
     const [colNumber,setColNumber]=useState(0)
@@ -11,14 +11,31 @@ const Grid = () => {
     const items = Array(rowNumber*colNumber).fill(0)
     const therows = Array(Number(rowNumber)).fill("1fr")
     const thecolumns = Array(Number(colNumber)).fill("1fr")
+    
+    const [selectedDivs,setSelectedDivs]=useState([])
+
+
 
     const [rows,setRows]=useState([])
     const [cols,setCols]=useState([])
-
+    //let hexNum = () => {return Math.round((Math.random()*1000000)+1) }
     const divs = items.map((val,index)=>index+1)
+    const [start,setStart]=useState(0)
+   const [end,setEnd]=useState(0)
+
+
+    console.log(start,end,'yes')
+
+    const [count,setCount]=useState(0)
+    const currentColor = colors[count]
+
+
 
     
     const [isMouseDown,setIsMouseDown]=useState(false)
+    const [cursorType,setCursorType]=useState("grabbing")
+
+    
     useEffect(()=>{
         setRows(therows)
     },[therows.length])
@@ -26,6 +43,10 @@ const Grid = () => {
     useEffect(()=>{
         setCols(thecolumns)
     },[thecolumns.length])
+
+    
+
+
 
     let colStr = ""
     for (let col of cols) {
@@ -79,29 +100,68 @@ const Grid = () => {
     }
 
     const handleMouseEnter = (index)=>{
-        
-        let myDiv = document.getElementsByClassName(`grid-item-main${index}`)[0].style.backgroundColor ="green"
+        if (isMouseDown) {
+            console.log(`entered ${index}, AND MOUSE DOWN!,${selectedDivs}`)
+            let Divs = selectedDivs.slice()
+             if (!Divs.includes(index)) {
+                Divs.push(index)
+                console.log(Divs,'Divs')
+             }
+           
+            setSelectedDivs(Divs)
+            console.log(selectedDivs,typeof(selectedDivs))
+
+        }
+       
         console.log("entered")
+        
         
     }
 
     const handleMouseLeave = (index)=> {
         console.log("left")
+       
     }
-    const handleMouseUp = (index)=>{
-        setIsMouseDown((prev)=>!prev)
-        console.log(isMouseDown)
-        document.getElementsByClassName(`grid-item-main${index}`)[0].style.cursor="pointer"
+    const handleMouseUp = (index,e)=>{
+        setIsMouseDown((prev)=>false)
+        console.log(isMouseDown,"mouse is up",index,selectedDivs,'selectedDvs')
+        setSelectedDivs([])
+        setEnd(index)
+        setCursorType('grab')
+           
+       
+        
+
+        
     }
-    const handleMouseDown = (index) => {
-        setIsMouseDown((prev)=>!prev)
-        console.log(isMouseDown)
-        document.getElementsByClassName(`grid-item-main${index}`)[0].style.cursor="grabbing"
-    }
+    const handleMouseDown = (index,e) => {
+        setIsMouseDown((prev)=>true)
+        console.log(isMouseDown,"mouse down",index)
+        setStart(index)
+        setCursorType('grabbing')
+        setCount((prev)=>prev+1)
+
+        let Divs = selectedDivs.slice()
+             if (!Divs.includes(index)) {
+                Divs.push(index)
+                console.log(Divs,'Divs')
+             }
+           
+            setSelectedDivs(Divs)
+            console.log(selectedDivs,typeof(selectedDivs))
+        
+       }
+       
+    
   return (
     <div className='grid'>
       <div className='grid-container'>
-        <div className='grid-item-one'></div>
+        <div className='grid-item-one' 
+        onMouseDown={()=>setCursorType('grabbing')}
+        onMouseUp={()=>setCursorType('grab')}
+        onMouseLeave={()=>setCursorType('grab')}
+        style={{cursor:`${cursorType}`}}
+        ></div>
         <div className='grid-item-two' style={{...myGridTwo}}>
         {cols.map((col,index)=>
             <form className="input-col-item" onSubmit={(e)=>handleSetCols(e,index)}>
@@ -130,13 +190,13 @@ const Grid = () => {
             
            {items.map((item,index)=>
            <div key={uuidv4()}
-            className={`grid-item-main${index}`}
-
-            onMouseDown={()=>handleMouseDown(index)}
-            onMouseUp={()=>handleMouseUp(index)}
+            id={`grid-item-main${index}`}
+            className='grid-item-main'
+            onMouseDown={(e)=>handleMouseDown(index,e)}
+            onMouseUp={(e)=>handleMouseUp(index,e)}
             onMouseLeave={()=>handleMouseLeave(index)}
              onMouseEnter={()=>handleMouseEnter(index)}
-             style={{}}
+             style={{cursor:`${cursorType}`}}   
              >
              {/* r:{Math.floor(index/colNumber)}<br/> */}
              {/* c:{index%colNumber}<br/> */}
@@ -144,6 +204,13 @@ const Grid = () => {
              </div>
              
            )}
+           
+            {/* <style>
+                {`.grid-item-main {
+                    cursor:${cursorType}
+                }`}
+            </style> */}
+
 
             </div>
            
