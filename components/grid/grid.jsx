@@ -12,10 +12,13 @@ const Grid = () => {
     const therows = Array(Number(rowNumber)).fill("1fr")
     const thecolumns = Array(Number(colNumber)).fill("1fr")
 
-
-
     const [rows,setRows]=useState([])
     const [cols,setCols]=useState([])
+
+    const divs = items.map((val,index)=>index+1)
+
+    
+    const [isMouseDown,setIsMouseDown]=useState(false)
     useEffect(()=>{
         setRows(therows)
     },[therows.length])
@@ -74,7 +77,27 @@ const Grid = () => {
         setRows(newRows)
         
     }
-    
+
+    const handleMouseEnter = (index)=>{
+        
+        let myDiv = document.getElementsByClassName(`grid-item-main${index}`)[0].style.backgroundColor ="green"
+        console.log("entered")
+        
+    }
+
+    const handleMouseLeave = (index)=> {
+        console.log("left")
+    }
+    const handleMouseUp = (index)=>{
+        setIsMouseDown((prev)=>!prev)
+        console.log(isMouseDown)
+        document.getElementsByClassName(`grid-item-main${index}`)[0].style.cursor="pointer"
+    }
+    const handleMouseDown = (index) => {
+        setIsMouseDown((prev)=>!prev)
+        console.log(isMouseDown)
+        document.getElementsByClassName(`grid-item-main${index}`)[0].style.cursor="grabbing"
+    }
   return (
     <div className='grid'>
       <div className='grid-container'>
@@ -106,10 +129,18 @@ const Grid = () => {
         <div className='grid-box' style={{...myGrid}}>
             
            {items.map((item,index)=>
-           <div key={uuidv4()} className='grid-item-main'>
-             r:{Math.floor(index/colNumber)}<br/>
+           <div key={uuidv4()}
+            className={`grid-item-main${index}`}
+
+            onMouseDown={()=>handleMouseDown(index)}
+            onMouseUp={()=>handleMouseUp(index)}
+            onMouseLeave={()=>handleMouseLeave(index)}
+             onMouseEnter={()=>handleMouseEnter(index)}
+             style={{}}
+             >
+             {/* r:{Math.floor(index/colNumber)}<br/> */}
              {/* c:{index%colNumber}<br/> */}
-             {/* i:{index} */}
+             i:{index}
              </div>
              
            )}
