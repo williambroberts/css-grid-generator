@@ -10,7 +10,7 @@ export default function Home() {
   useEffect(() => {
     setTimeout(()=>{
        setMounted(true)
-    },1000)
+    },10)
    
   }, [])
 
@@ -19,7 +19,10 @@ export default function Home() {
   }
   return (
     <main>
-     <Grid/>
+      <div className='grid-wrapper'>
+         <Grid/>
+      </div>
+    
     </main>
   )
 }

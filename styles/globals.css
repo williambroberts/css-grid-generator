@@ -157,3 +157,14 @@
       padding-top: 120px;
       
     }
+    .grid-wrapper {
+      display: flex;
+      margin: auto;
+      align-items: center;
+      /* padding-left:clamp(0.5rem, 0.156rem + 1.8349vw, 1rem);
+      padding-right:clamp(0.5rem, 0.156rem + 1.8349vw, 1rem); */
+      background-color: var(--frenchred);
+      /* width:clamp(10.75rem, 0rem + 100vw, 36rem); */
+      box-sizing: border-box;
+      max-width: 736px;
+    }
