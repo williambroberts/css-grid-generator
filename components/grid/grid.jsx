@@ -32,8 +32,10 @@ const Grid = () => {
      const [count,setCount]=useState(0)
     const currentColor = colors[count]
     const initialbgColors = items.map((item)=> '#FFFFFF')
-
+    const initialDivText = items.map((item)=>'')
     const [bgColors,setBgColors]=useState([])
+    const [DivsText,setDivsText]=useState([])
+
 
     const [isMouseDown,setIsMouseDown]=useState(false)
     const [cursorType,setCursorType]=useState("grabbing")
@@ -74,7 +76,9 @@ const Grid = () => {
     useEffect(()=>{
         setBgColors(initialbgColors)
     },[initialbgColors.length])
-    
+    useEffect(()=>{
+        setDivsText(initialDivText)
+    },[initialDivText.length])
 
 
 
@@ -222,13 +226,20 @@ const Grid = () => {
 
 
     const handleReset = () => {
-        console.log('resetted')
+        
         setCount(0)
         //setSelectedDivs([])
-        setGridAreaDivs([])
+        setGridAreaDivs((prev)=>[])
+        setBgColors(initialbgColors)
+        console.log('resetted',count,gridAreaDivs)
     }
 
     const handleFullReset = () =>{
+        handleReset()
+        setColNumber(0)
+        setRowGap(0)
+        setRowNumber(0)
+        setColNumber(0)
 
     }
   return (
@@ -301,9 +312,9 @@ const Grid = () => {
         <GridFields rowGap={rowGap} colGap={colGap} rowNumber={rowNumber} colNumber={colNumber}
         setColNumber={setColNumber} setColGap={setColGap} setRowGap={setRowGap} setRowNumber={setRowNumber}
         />
-        <button onClick={()=>handleReset()}>reset grid</button>
+        <button onClick={()=>handleReset()}>clear grid</button>
         <button onClick={()=>handleGenerateCode()}>generate code</button>
-        <button onClick={()=>handleFullReset()}>full reset (reload page?)</button>
+        <button onClick={()=>handleFullReset()}>full reset</button>
     </div>
   )
 }
