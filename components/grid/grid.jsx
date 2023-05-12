@@ -242,7 +242,8 @@ const Grid = () => {
         ></div>
         <div className='grid-item-two' style={{...myGridTwo}}>
         {cols.map((col,index)=>
-            <form className="input-col-item" onSubmit={(e)=>handleSetCols(e,index)}>
+            <form key={uuidv4()}
+            className="input-col-item" onSubmit={(e)=>handleSetCols(e,index)}>
                 <input id={`col-input${index}`} placeholder={isInputFocusedCol===index? '':`${col}`}
                 onFocus={()=>setIsInputFocusedCol(index)}
                 onBlur={()=>setIsInputFocusedCol(-1)}
@@ -256,7 +257,8 @@ const Grid = () => {
         </div>
         <div className='grid-item-three' style={{...myGridThree}} >
         {rows.map((row,index)=>
-            <form className="input-row-item" onSubmit={(e)=>handleSetRows(e,index)}>
+            <form key={uuidv4()}
+            className="input-row-item" onSubmit={(e)=>handleSetRows(e,index)}>
                 <input id={`row-input${index}`} placeholder={isInputFocusedRow===index? '':`${row}`}
                 onFocus={()=>setIsInputFocusedRow(index)}
                 onBlur={()=>setIsInputFocusedRow(-1)}
