@@ -27,6 +27,14 @@ const Grid = () => {
     const endCoord = [Math.floor(selectedDivs[selectedDivs.length-1]/colNumber),(selectedDivs[selectedDivs.length-1]%colNumber)]
     const realSelctedDivs = []
 
+    const [gridAreaDivs,setGridAreaDivs]=useState([])
+
+     const [count,setCount]=useState(0)
+    const currentColor = colors[count]
+
+    const [isMouseDown,setIsMouseDown]=useState(false)
+    const [cursorType,setCursorType]=useState("grabbing")
+    const [cursorType2,setCursorType2]=useState("grabbing")
     const getCoordinates = (start, end) => {
         const coordinates = [];
         const rows = Math.abs(end[0] - start[0]) + 1;
@@ -45,14 +53,11 @@ const Grid = () => {
 
     console.log(start,end,'yes')
 
-    const [count,setCount]=useState(0)
-    const currentColor = colors[count]
+   
 
 
 
     
-    const [isMouseDown,setIsMouseDown]=useState(false)
-    const [cursorType,setCursorType]=useState("grabbing")
 
     
     useEffect(()=>{
@@ -155,13 +160,15 @@ const Grid = () => {
         const myCoordinates = getCoordinates(startCoord,endCoord)
         const indexes = []
         myCoordinates.forEach((item)=> indexes.push(item[0]*colNumber+item[1]) )
-        console.log(indexes,'real indexes')
+        console.log(indexes,'real indexes',count,'count')
         indexes.forEach((item)=> 
             console.log( document.getElementById(`grid-item-main${index}`).style.backgroundColor),
 
             document.getElementById(`grid-item-main${index}`).style.backgroundColor = currentColor
         )
-        
+        let newGridAreaDivs = gridAreaDivs
+        newGridAreaDivs.push(`.item${count} { grid-area: ${startCoord[0]+1}/${startCoord[1]+1}/${endCoord[0]+2}/${endCoord[1]+2};}`)
+        setGridAreaDivs(newGridAreaDivs)
     }
     const handleMouseDown = (index,e) => {
         setIsMouseDown((prev)=>true)
@@ -176,22 +183,39 @@ const Grid = () => {
                 console.log(Divs,'Divs')
              }
            
-            setSelectedDivs(Divs)
-            console.log(selectedDivs,typeof(selectedDivs))
-        
+        setSelectedDivs(Divs)
+        console.log(selectedDivs,typeof(selectedDivs),'here will')
+            
        }
        
+
+       const handleGenerateCode = () => {
+        let parent = `.container {
+            display: grid;
+            grid-template-columns: ${myGrid.gridTemplateColumns};
+            grid-template-rows: ${myGrid.gridTemplateRows};
+            column-gap:${myGrid.columnGap};
+            row-gap: ${myGrid.rowGap};  
+        }`
+            console.log('grid',parent,'divs',gridAreaDivs)
+       }
+
+
     const handleReset = () => {
         console.log('resetted')
+    }
+
+    const handleFullReset = () =>{
+
     }
   return (
     <div className='grid'>
       <div className='grid-container'>
         <div className='grid-item-one' 
-        onMouseDown={()=>setCursorType('grabbing')}
-        onMouseUp={()=>setCursorType('grab')}
-        onMouseLeave={()=>setCursorType('grab')}
-        style={{cursor:`${cursorType}`}}
+        onMouseDown={()=>setCursorType2('grabbing')}
+        onMouseUp={()=>setCursorType2('grab')}
+        onMouseLeave={()=>setCursorType2('grab')}
+        style={{cursor:`${cursorType2}`}}
         ></div>
         <div className='grid-item-two' style={{...myGridTwo}}>
         {cols.map((col,index)=>
@@ -257,6 +281,8 @@ const Grid = () => {
         setColNumber={setColNumber} setColGap={setColGap} setRowGap={setRowGap} setRowNumber={setRowNumber}
         />
         <button onClick={()=>handleReset()}>reset grid</button>
+        <button onClick={()=>handleGenerateCode()}>generate code</button>
+        <button onClick={()=>handleFullReset()}>full reset (reload page?)</button>
     </div>
   )
 }
