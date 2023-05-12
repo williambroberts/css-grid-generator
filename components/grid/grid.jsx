@@ -31,6 +31,9 @@ const Grid = () => {
 
      const [count,setCount]=useState(0)
     const currentColor = colors[count]
+    const initialbgColors = items.map((item)=> '#FFFFFF')
+
+    const [bgColors,setBgColors]=useState([])
 
     const [isMouseDown,setIsMouseDown]=useState(false)
     const [cursorType,setCursorType]=useState("grabbing")
@@ -68,6 +71,9 @@ const Grid = () => {
         setCols(thecolumns)
     },[thecolumns.length])
 
+    useEffect(()=>{
+        setBgColors(initialbgColors)
+    },[initialbgColors.length])
     
 
 
@@ -160,15 +166,28 @@ const Grid = () => {
         const myCoordinates = getCoordinates(startCoord,endCoord)
         const indexes = []
         myCoordinates.forEach((item)=> indexes.push(item[0]*colNumber+item[1]) )
-        console.log(indexes,'real indexes',count,'count')
-        indexes.forEach((item)=> 
-            console.log( document.getElementById(`grid-item-main${index}`).style.backgroundColor),
+        console.log(indexes,'real indexes',count,'div number (count)')
 
-            document.getElementById(`grid-item-main${index}`).style.backgroundColor = currentColor
+        indexes.forEach((item)=> 
+           // console.log(document.getElementById(`grid-item-main${item}`).style.backgroundColor),
+            console.log(bgColors[item],currentColor,item)
+            //document.getElementById(`grid-item-main${item}`).style.backgroundColor = currentColor
         )
+        let newbgColors = bgColors.slice()
+        for (let item of indexes){
+            console.log(item)
+            newbgColors[item]=currentColor
+            setBgColors(newbgColors)
+        }
+
+
         let newGridAreaDivs = gridAreaDivs
         newGridAreaDivs.push(`.item${count} { grid-area: ${startCoord[0]+1}/${startCoord[1]+1}/${endCoord[0]+2}/${endCoord[1]+2};}`)
         setGridAreaDivs(newGridAreaDivs)
+
+
+
+
     }
     const handleMouseDown = (index,e) => {
         setIsMouseDown((prev)=>true)
@@ -259,7 +278,7 @@ const Grid = () => {
             onMouseUp={(e)=>handleMouseUp(index,e)}
             onMouseLeave={()=>handleMouseLeave(index)}
              onMouseEnter={()=>handleMouseEnter(index)}
-             style={{cursor:`${cursorType}`}}   
+             style={{cursor:`${cursorType}`,backgroundColor:`${bgColors[index]}`}}   
              >
              {/* r:{Math.floor(index/colNumber)}<br/> */}
              {/* c:{index%colNumber}<br/> */}
@@ -268,11 +287,7 @@ const Grid = () => {
              
            )}
            
-            {/* <style>
-                {`.grid-item-main {
-                    cursor:${cursorType}
-                }`}
-            </style> */}
+           
 
 
             </div>
