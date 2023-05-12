@@ -30,7 +30,7 @@ const Grid = () => {
     const realSelctedDivs = []
 
     const [gridAreaDivs,setGridAreaDivs]=useState([])
-
+    const [gridAreaClasses,setGridAreaClasses]=useState([])
      const [count,setCount]=useState(0)
     //const currentColor = colors[count+205]
     const currentColor = colors[Math.floor(Math.random()*colors.length)]
@@ -47,7 +47,7 @@ const Grid = () => {
     const [isGridCodeOpen,setIsGridCodeOpen]=useState(false)
     const [codeCss,setCodeCss]=useState([])
     const [codeHtml,setCodeHtml]=useState([])
-    console.log(codeCss[1],'code css here will')
+   
     const getCoordinates = (start, end) => {
         const coordinates = [];
         const rows = Math.abs(end[0] - start[0]) + 1;
@@ -199,6 +199,9 @@ const Grid = () => {
         setDivsText(newDivText)
 
         let newGridAreaDivs = gridAreaDivs
+        let newGridAreaClasses = gridAreaClasses.slice()
+        newGridAreaClasses.push(`<div class="item${count}"></div>`)
+        setGridAreaClasses(newGridAreaClasses)
         newGridAreaDivs.push(`.item${count} { grid-area: ${startCoord[0]+1}/${startCoord[1]+1}/${endCoord[0]+2}/${endCoord[1]+2};}`)
         setGridAreaDivs(newGridAreaDivs)
 
@@ -232,13 +235,23 @@ const Grid = () => {
             grid-template-rows: ${myGrid.gridTemplateRows};
             column-gap:${myGrid.columnGap};
             row-gap: ${myGrid.rowGap};  
-        }`
+        }`  
+        let innerHTMLCode = [`<div class="parent">`]
+       gridAreaClasses.forEach((item)=> innerHTMLCode.push(item))
+       innerHTMLCode.push(`</div>`)
+        
+
+
+
            
-            gridAreaDivs.forEach((item)=>console.log(item))
-            let codeCss = [parent,gridAreaDivs]
-            setCodeCss(codeCss)
-             console.log(codeCss,'codeCss')
-            setIsGridCodeOpen((prev)=>true)
+        let codeCss = [parent,gridAreaDivs]
+        setCodeCss(codeCss)
+        console.log(codeCss,'codeCss')
+        setIsGridCodeOpen((prev)=>true)
+        setCodeHtml(innerHTMLCode)
+
+
+
        }
 
 
@@ -247,8 +260,9 @@ const Grid = () => {
         setCount(0)
         //setSelectedDivs([])
         setGridAreaDivs((prev)=>[])
+        setGridAreaClasses((prev)=>[])
         setBgColors(initialbgColors)
-        console.log('resetted',count,gridAreaDivs)
+        console.log('resetted',count,gridAreaDivs,gridAreaClasses)
     }
 
     const handleFullReset = () =>{
@@ -335,7 +349,7 @@ const Grid = () => {
 
         <div className={`grid-code-container ${isGridCodeOpen? 'open': ''}`}>
             <GridCode codeCss={codeCss} codeHtml={codeHtml}/>
-            <div className='grid-code-blur' onClick={()=>setIsGridCodeOpen((prev)=>false)}>{codeCss[1].length===0? 'Please make a grid':''}</div>
+            <div className='grid-code-blur' onClick={()=>setIsGridCodeOpen((prev)=>false)}>{codeCss[1]===undefined? 'Please make a grid': items.length===0? 'Please make a grid':''}</div>
         </div>
     </div>
   )
