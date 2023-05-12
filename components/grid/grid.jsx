@@ -200,9 +200,9 @@ const Grid = () => {
 
         let newGridAreaDivs = gridAreaDivs
         let newGridAreaClasses = gridAreaClasses.slice()
-        newGridAreaClasses.push(`<div class="item${count}"></div>`)
+        newGridAreaClasses.push(`<div class="item${count}"></div> \n`)
         setGridAreaClasses(newGridAreaClasses)
-        newGridAreaDivs.push(`.item${count} { grid-area: ${startCoord[0]+1}/${startCoord[1]+1}/${endCoord[0]+2}/${endCoord[1]+2};}`)
+        newGridAreaDivs.push(`\n .item${count} { grid-area: ${startCoord[0]+1}/${startCoord[1]+1}/${endCoord[0]+2}/${endCoord[1]+2};}`)
         setGridAreaDivs(newGridAreaDivs)
 
 
@@ -236,14 +236,15 @@ const Grid = () => {
         //     column-gap:${myGrid.columnGap};
         //     row-gap: ${myGrid.rowGap};  
         // }`  
-        let parent = [`.container {`,` display: grid;`,
-        `grid-template-columns: ${myGrid.gridTemplateColumns};`,
-       ` grid-template-rows: ${myGrid.gridTemplateRows};`,
-        `column-gap:${myGrid.columnGap};`,
-       ` row-gap: ${myGrid.rowGap};  `,
+        let parent = [`.container { \n`,
+        ` display: grid; \n`,
+        `grid-template-columns: ${myGrid.gridTemplateColumns}; \n`,
+       ` grid-template-rows: ${myGrid.gridTemplateRows}; \n`,
+        `column-gap:${myGrid.columnGap}; \n`,
+       ` row-gap: ${myGrid.rowGap}; \n `,
        `}`
         ]
-        let innerHTMLCode = [`<div class="parent">`]
+        let innerHTMLCode = [`<div class="parent"> \n`]
        gridAreaClasses.forEach((item)=> innerHTMLCode.push(item))
        innerHTMLCode.push(`</div>`)
         
