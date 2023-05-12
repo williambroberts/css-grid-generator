@@ -33,13 +33,6 @@ header > nav {
 .header-right {
     margin-right: 24px;
 }
-.hamburger-blur {
-    height: 100dvh;
-    position: absolute;
-    background-color:rgba(56, 57, 59,0.8) ;
-    cursor: pointer;
-    width: calc(100vw-265px);
-}
 
 .header-center {
     color: var(--t-2);
@@ -47,4 +40,34 @@ header > nav {
     left: 50%;
     align-self: center;
     transform: translate(-50%, -0%);
+}
+
+.hamburger-container {
+    z-index: 0;
+    width: 100vw;
+    height: 100dvh;
+    /* transition: var(--transition-1); */
+    display: flex;
+    align-items:flex-start;
+    transform: translateX(-100vw);
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    background-color: violet;
+}
+.hamburger-container.open {
+    transform: translateX(0vw);
+}
+.hamburger {
+    height: 100dvh;
+    width: 270px;
+   
+
+}
+.hamburger-blur {
+    background-color:rgba(56, 57, 59,0.8) ;
+    flex: 1 1 auto;
+    height: 100dvh;
+ cursor: pointer;
+
 }
