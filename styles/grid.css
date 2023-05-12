@@ -160,7 +160,7 @@
 }
 /* < /> */
 .html-1{
-    color: var(--t-3);
+    color: var(--t-2);
 }
 /* div */
 .html-2 {
@@ -172,7 +172,7 @@
 }
 /* = */
 .html-4 {
-    color:var(--t-1);
+    color:var(--darkgreen);
 }
 .html-5 {
     color:var(--sunset);

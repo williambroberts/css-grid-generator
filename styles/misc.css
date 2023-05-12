@@ -133,6 +133,7 @@ h1.title {
     background-color: var(--bg-2);
     color: var(--t-1);
     font-size: var(--font-size-14);
+    cursor: pointer;
 }
 
 .light-button {
@@ -142,4 +143,5 @@ h1.title {
     background-color: var(--bg-1);
     color: var(--t-1);
     font-size: var(--font-size-14);
+    cursor: pointer;
 }

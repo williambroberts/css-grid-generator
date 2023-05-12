@@ -3,10 +3,17 @@ import React, { useState } from 'react'
 import {v4 as uuidv4} from "uuid"
 import Intro from '../intro/intro'
 import Title from '../title/title'
+import { Inter } from 'next/font/google'
+
+
+const inter = Inter({ subsets: ['latin'] })
+
+
+
 const GridCode = ({items,codeCss,codeHtml}) => {
     const [isCss, setIsCss]=useState(false)
     const [clicked,setClicked]=useState(false)
-    console.log(codeHtml,'html',items,'items',codeHtml.slice(1,codeHtml.length-1),"slices")
+    console.log(codeCss,'css',items,'items' )
     if (items.length===0){
         return null
     }
@@ -51,23 +58,69 @@ const GridCode = ({items,codeCss,codeHtml}) => {
         {/* copy to clipboard */}
         <div className='button-flex'>
         <button 
-        className='dark-button'
-         onClick={()=>setIsCss((prev)=>!prev)}>view {!isCss? 'Css' : 'Html'}</button>
+        className={`${inter.className} dark-button`}
+         onClick={()=>setIsCss((prev)=>!prev)}> <span>view {!isCss? 'Css' : 'Html'}</span></button>
 
-          <button className='light-button' onClick={()=>handleCopy()}>{clicked? 'Copied!':'Copy to clipboard'}</button>
+          <button className={`${inter.className} light-button`} onClick={()=>handleCopy()}>{clicked? 'Copied!':'Copy to clipboard'}</button>
         </div>
         
 
         <div className='grid-code-css' style={{display: isCss? 'inline-block':'none'}}>
-        <ul className='code-list'>
-           
-              {codeCss[0].map((item)=> (<li className='code-list-item' key={uuidv4()}>{item}</li>) )}
-              </ul> 
+            
+          <div className="code-line">
+            <span className='html-2'>{codeCss[0][0]}</span>
+            <span className='html-1'>{codeCss[0][1]}</span>
+          </div>
 
+          <div className="code-line-inner">
+            <span className='html-1'>{codeCss[0][2]}</span>
+            <span className='html-2'>{codeCss[0][3]}</span>
+            <span className='html-3'>{codeCss[0][4]}</span>
+            <span className='html-2'>{codeCss[0][5]}</span>
+          </div>
 
-            <ul className='code-list'>
-              {codeCss[1].map((item)=> (<li className='code-list-item' key={uuidv4()}>{item}</li>) )}
-              </ul> 
+          
+          <div className="code-line-inner">
+            <span className='html-1'>{codeCss[0][6]}</span>
+            <span className='html-3'>{codeCss[0][7]}</span>
+            <span className='html-3'>{codeCss[0][8]}</span>
+            <span className='html-3'>{codeCss[0][9]}</span>
+          </div>
+        <div className="code-line-inner">
+            <span className='html-1'>{codeCss[0][10]}</span>
+            <span className='html-3'>{codeCss[0][11]}</span>
+            <span className='html-3'>{codeCss[0][12]}</span>
+            <span className='html-3'>{codeCss[0][13]}</span>
+          </div>
+          <div className="code-line-inner">
+            <span className='html-1'>{codeCss[0][14]}</span>
+            <span className='html-3'>{codeCss[0][15]}</span>
+            <span className='html-3'>{codeCss[0][16]}</span>
+            <span className='html-3'>{codeCss[0][17]}</span>
+          </div>
+          <div className="code-line-inner">
+            <span className='html-1'>{codeCss[0][18]}</span>
+            <span className='html-3'>{codeCss[0][19]}</span>
+            <span className='html-3'>{codeCss[0][20]}</span>
+            <span className='html-3'>{codeCss[0][21]}</span>
+          </div>
+          
+          <div className="code-line">
+            <span className='html-1'>{codeCss[0][22]}</span>
+          </div>
+
+          {codeCss[1].map((item)=> (
+            <div className='code-line'>
+              <span className='html-2'>{item[0]}</span>
+              <span className='html-1'>{item[1]}</span>
+              <span className='html-1'>{item[2]}</span>
+              <span className='html-1'>{item[3]}</span>
+              <span className='html-1'>{item[4]}</span>
+              <span className='html-1'>{item[5]}</span>
+            </div>
+
+          ))}
+          
         </div>
         <div className='grid-code-html' style={{display: isCss? 'none':'inline-block'}}>
            

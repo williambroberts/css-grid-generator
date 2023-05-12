@@ -4,6 +4,8 @@ import GridFields from './gridFields'
 import colors from './colors2.json'
 
 import GridCode from './gridCode'
+
+
 const Grid = () => {
     const [rowNumber,setRowNumber]=useState(0)
     const [colNumber,setColNumber]=useState(0)
@@ -204,7 +206,7 @@ const Grid = () => {
         newGridAreaClasses.push([`<`,`div `,`class`,`=`,`"item${count}"`,`>`,`</`,`div`,`> \n`])
         setGridAreaClasses(newGridAreaClasses)
         //newGridAreaDivs.push(`\n .item${count} { grid-area: ${startCoord[0]+1}/${startCoord[1]+1}/${endCoord[0]+2}/${endCoord[1]+2};}`)
-        newGridAreaDivs.push([`\n .item{count}`,`{`,`grid-area:`,`${startCoord[0]+1}/${startCoord[1]+1}/${endCoord[0]+2}/${endCoord[1]+2}`,`;`,`}`])
+        newGridAreaDivs.push([`\n .item${count} `,`{ `,`grid-area:`,`${startCoord[0]+1}/${startCoord[1]+1}/${endCoord[0]+2}/${endCoord[1]+2}`,`;`,` }`])
         setGridAreaDivs(newGridAreaDivs)
 
 
@@ -238,7 +240,7 @@ const Grid = () => {
         //     column-gap:${myGrid.columnGap};
         //     row-gap: ${myGrid.rowGap};  
         // }`  
-        let parent = [`.container`, `{ \n`,
+        let parent = [`.container `, `{ \n`,
         ` display`,`:`, `grid`,`; \n`,
         `grid-template-columns`,`:`, `${myGrid.gridTemplateColumns}`,`; \n`,
        ` grid-template-rows`,`:`, `${myGrid.gridTemplateRows}`,`; \n`,
@@ -354,9 +356,9 @@ const Grid = () => {
         setColNumber={setColNumber} setColGap={setColGap} setRowGap={setRowGap} setRowNumber={setRowNumber}
         />
         
-        <button onClick={()=>handleReset()}>clear grid</button>
-        <button onClick={()=>handleGenerateCode()}>generate code</button>
-        <button onClick={()=>handleFullReset()}>full reset</button>
+        <button className="dark-button" onClick={()=>handleReset()}>clear grid</button>
+        <button className="light-button" onClick={()=>handleGenerateCode()}>generate code</button>
+        <button className="dark-button" onClick={()=>handleFullReset()}>full reset</button>
 
         <div className={`grid-code-container ${isGridCodeOpen? 'open': ''}`}>
             <GridCode codeCss={codeCss} codeHtml={codeHtml} items={items}/>
