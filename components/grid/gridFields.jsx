@@ -2,6 +2,8 @@
 import React from 'react'
 
 const GridFields = ({setColGap,colGap,setColNumber,colNumber,setRowGap,rowGap,setRowNumber,rowNumber}) => {
+
+
   return (
     <div className='grid-fields'>
      <fieldset>
@@ -11,8 +13,8 @@ const GridFields = ({setColGap,colGap,setColNumber,colNumber,setRowGap,rowGap,se
                     <input type="number" min="0" max="12" name="row-input" id="row-input"
                      value={rowNumber} onChange={(e)=>setRowNumber(e.target.value)}
                     />
-                    <button className='grid-field-button' onClick={()=>setRowNumber((prev)=>prev+1)}>+</button>
-                    <button className='grid-field-button' onClick={()=>setRowNumber((prev)=>prev-1)}>-</button>
+                    <button className='grid-field-button' onClick={()=>setRowNumber((prev)=>prev===12? prev:prev+1)}>+</button>
+                    <button className='grid-field-button' onClick={()=>setRowNumber((prev)=>prev===0? prev: prev-1)}>-</button>
             </fieldset>
             <fieldset>
                 <label htmlFor='col-input'>
@@ -21,8 +23,8 @@ const GridFields = ({setColGap,colGap,setColNumber,colNumber,setRowGap,rowGap,se
                     <input type="number" min="0" max="12" name="col-input" id="col-input"
                      value={colNumber} onChange={(e)=>setColNumber(e.target.value)}
                     />
-                    <button className='grid-field-button' onClick={()=>setColNumber((prev)=>prev+1)}>+</button>
-                    <button className='grid-field-button' onClick={()=>setColNumber((prev)=>prev-1)}>-</button>
+                    <button className='grid-field-button' onClick={()=>setColNumber((prev)=> prev===12? prev:prev+1)}>+</button>
+                    <button className='grid-field-button' onClick={()=>setColNumber((prev)=>prev===0? prev: prev-1)}>-</button>
             </fieldset>
             <fieldset>
                 <label htmlFor='row-gap'>

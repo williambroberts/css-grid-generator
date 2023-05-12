@@ -124,6 +124,7 @@
     width: 100vw;
     background-color:greenyellow;
     overflow-y: auto;
+    overflow-x: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
