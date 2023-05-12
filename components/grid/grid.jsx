@@ -229,13 +229,20 @@ const Grid = () => {
        
 
        const handleGenerateCode = () => {
-        let parent = `.container {
-            display: grid;
-            grid-template-columns: ${myGrid.gridTemplateColumns};
-            grid-template-rows: ${myGrid.gridTemplateRows};
-            column-gap:${myGrid.columnGap};
-            row-gap: ${myGrid.rowGap};  
-        }`  
+        // let parent = `.container {
+        //     display: grid;
+        //     grid-template-columns: ${myGrid.gridTemplateColumns};
+        //     grid-template-rows: ${myGrid.gridTemplateRows};
+        //     column-gap:${myGrid.columnGap};
+        //     row-gap: ${myGrid.rowGap};  
+        // }`  
+        let parent = [`.container {`,` display: grid;`,
+        `grid-template-columns: ${myGrid.gridTemplateColumns};`,
+       ` grid-template-rows: ${myGrid.gridTemplateRows};`,
+        `column-gap:${myGrid.columnGap};`,
+       ` row-gap: ${myGrid.rowGap};  `,
+       `}`
+        ]
         let innerHTMLCode = [`<div class="parent">`]
        gridAreaClasses.forEach((item)=> innerHTMLCode.push(item))
        innerHTMLCode.push(`</div>`)
@@ -246,7 +253,7 @@ const Grid = () => {
            
         let codeCss = [parent,gridAreaDivs]
         setCodeCss(codeCss)
-        console.log(codeCss,'codeCss')
+        console.log(codeCss,'codeCss',innerHTMLCode,'htmlcode')
         setIsGridCodeOpen((prev)=>true)
         setCodeHtml(innerHTMLCode)
 
@@ -348,7 +355,7 @@ const Grid = () => {
         <button onClick={()=>handleFullReset()}>full reset</button>
 
         <div className={`grid-code-container ${isGridCodeOpen? 'open': ''}`}>
-            <GridCode codeCss={codeCss} codeHtml={codeHtml}/>
+            <GridCode codeCss={codeCss} codeHtml={codeHtml} items={items}/>
             <div className='grid-code-blur' onClick={()=>setIsGridCodeOpen((prev)=>false)}>{codeCss[1]===undefined? 'Please make a grid': items.length===0? 'Please make a grid':''}</div>
         </div>
     </div>

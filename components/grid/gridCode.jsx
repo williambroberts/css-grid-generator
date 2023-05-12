@@ -3,11 +3,11 @@ import React, { useState } from 'react'
 import {v4 as uuidv4} from "uuid"
 import Intro from '../intro/intro'
 import Title from '../title/title'
-const GridCode = ({codeCss,codeHtml}) => {
+const GridCode = ({items,codeCss,codeHtml}) => {
     const [isCss, setIsCss]=useState(false)
     const [clicked,setClicked]=useState(false)
-    console.log(codeCss,'inpage')
-    if (!codeCss[1]){
+    //console.log(codeCss,'css',codeHtml,'html')
+    if (items.length===0){
         return null
     }
 
@@ -30,13 +30,19 @@ const GridCode = ({codeCss,codeHtml}) => {
         
 
         <div className='grid-display-css' style={{display: isCss? 'inline-block':'none'}}>
-            {codeCss[0]}
-            <ul className='grid-display'>
-              {codeCss[1].map((item)=> (<li key={uuidv4()}>{item}</li>) )}
+        <ul className='code-list'>
+              {codeCss[0].map((item)=> (<li className='code-list-item' key={uuidv4()}>{item}</li>) )}
+              </ul> 
+
+
+            <ul className='code-list'>
+              {codeCss[1].map((item)=> (<li className='code-list-item' key={uuidv4()}>{item}</li>) )}
               </ul> 
         </div>
         <div className='grid-display-html' style={{display: isCss? 'none':'inline-block'}}>
-            {codeHtml}
+           <ul className='code-list'>
+            {codeHtml.map((item)=> (<li className='code-list-item' key={uuidv4()}>{item}</li>) )}
+            </ul>
         </div>
       {/* close page */}
     </div>
