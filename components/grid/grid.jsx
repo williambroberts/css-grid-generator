@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import {v4 as uuidv4} from "uuid"
 import GridFields from './gridFields'
-import colors from './colors.json'
+import colors from './colors2.json'
+import IconSdCard from '../icons/sdcard'
 const Grid = () => {
     const [rowNumber,setRowNumber]=useState(0)
     const [colNumber,setColNumber]=useState(0)
@@ -30,7 +31,8 @@ const Grid = () => {
     const [gridAreaDivs,setGridAreaDivs]=useState([])
 
      const [count,setCount]=useState(0)
-    const currentColor = colors[count]
+    //const currentColor = colors[count+205]
+    const currentColor = colors[Math.floor(Math.random()*colors.length)]
     const initialbgColors = items.map((item)=> '#FFFFFF')
     const initialDivText = items.map((item)=>'')
     const [bgColors,setBgColors]=useState([])
@@ -179,11 +181,15 @@ const Grid = () => {
         )
         let newbgColors = bgColors.slice()
         for (let item of indexes){
-            console.log(item)
+            
             newbgColors[item]=currentColor
-            setBgColors(newbgColors)
+            //console.log(item,newbgColors)
         }
-
+       // console.log(newbgColors,'newbgcolors')
+        setBgColors(newbgColors)
+        let newDivText = DivsText.slice()
+        newDivText[indexes[0]]=`${count}`
+        setDivsText(newDivText)
 
         let newGridAreaDivs = gridAreaDivs
         newGridAreaDivs.push(`.item${count} { grid-area: ${startCoord[0]+1}/${startCoord[1]+1}/${endCoord[0]+2}/${endCoord[1]+2};}`)
@@ -295,7 +301,7 @@ const Grid = () => {
              >
              {/* r:{Math.floor(index/colNumber)}<br/> */}
              {/* c:{index%colNumber}<br/> */}
-             i:{index}
+             {DivsText[index]}
              </div>
              
            )}
