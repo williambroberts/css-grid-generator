@@ -8,6 +8,7 @@ const Header = () => {
    <header>
     <nav className='header-nav'>
         <span className='header-self'><Self/></span>
+        <span className='header-center'>CSS Grid Generator</span>
         <span className='header-mid'><ThemeButton/></span>
         <span className='header-right'>☰</span>
     </nav>

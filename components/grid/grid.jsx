@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import {v4 as uuidv4} from "uuid"
 import GridFields from './gridFields'
 import colors from './colors2.json'
-import IconSdCard from '../icons/sdcard'
+
 import GridCode from './gridCode'
 const Grid = () => {
     const [rowNumber,setRowNumber]=useState(0)
@@ -325,7 +325,7 @@ const Grid = () => {
           
         </div>
 
-        row gap{rowGap} col gap {colGap}
+        
         <GridFields rowGap={rowGap} colGap={colGap} rowNumber={rowNumber} colNumber={colNumber}
         setColNumber={setColNumber} setColGap={setColGap} setRowGap={setRowGap} setRowNumber={setRowNumber}
         />

@@ -78,3 +78,11 @@
     color: var(--t-3);
     transition: var(--transition-1);
   }
+
+  /* title component */
+h1.title {
+    color: ;
+    font-size: var(--font-size-56);
+    font-weight: 500;
+    letter-spacing: ;
+}

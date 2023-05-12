@@ -6,8 +6,9 @@ const GridCode = ({codeCss,codeHtml}) => {
     }
   return (
     <div className='grid-code'>
-        {code[0]} <br/>
-        {code[1].map((item)=> (<span  key={uuidv4()}>{item}<br/></span>) )}
+        
+
+        
     </div>
   )
 }
