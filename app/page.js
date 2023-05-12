@@ -10,7 +10,7 @@ export default function Home() {
   useEffect(() => {
     setTimeout(()=>{
        setMounted(true)
-    },100)
+    },10)
    
   }, [])
 

@@ -2,7 +2,7 @@
 div.loader {
     width: 100vw;
     height: 100dvh;
-    background-color: var(--bg-dt);
+    background-color: var(--bg-b);
     color: var(--bg-1);
     position: fixed;
     display: flex;
