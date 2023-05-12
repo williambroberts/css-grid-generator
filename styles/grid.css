@@ -129,17 +129,51 @@
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
+    border-bottom: 1px solid var(--bg-4);
 }
 .grid-code-blur {
     cursor: pointer;
     width: 100vw;
     flex:1 1 auto;
-    background-color: var(--bg-blur);
+    background-color: var(--bg-b);
 
     display: flex;
     align-items: center;
     justify-content: center;
-    color:var(--bg-1)
+    color:var(--t-1)
     
 }
 
+
+
+/* code blocks */
+.code-line {
+    font-size: var(--font-size-14);
+    background-color: var(--bg-2);
+    padding-bottom: 0.25rem;
+}
+.code-line-inner {
+    font-size: var(--font-size-14);
+    background-color: var(--bg-2);
+    padding-bottom: 0.25rem;
+    padding-left: 0.5rem;
+}
+/* < /> */
+.html-1{
+    color: var(--t-3);
+}
+/* div */
+.html-2 {
+    color:hsl(27,99%,36%);
+}
+/* class */
+.html-3 {
+    color:var(--css);
+}
+/* = */
+.html-4 {
+    color:var(--t-1);
+}
+.html-5 {
+    color:var(--sunset);
+}

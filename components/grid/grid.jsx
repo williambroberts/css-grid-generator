@@ -200,9 +200,11 @@ const Grid = () => {
 
         let newGridAreaDivs = gridAreaDivs
         let newGridAreaClasses = gridAreaClasses.slice()
-        newGridAreaClasses.push(`<div class="item${count}"></div> \n`)
+        //newGridAreaClasses.push(`<div class="item${count}"></div> \n`)
+        newGridAreaClasses.push([`<`,`div `,`class`,`=`,`"item${count}"`,`>`,`</`,`div`,`> \n`])
         setGridAreaClasses(newGridAreaClasses)
-        newGridAreaDivs.push(`\n .item${count} { grid-area: ${startCoord[0]+1}/${startCoord[1]+1}/${endCoord[0]+2}/${endCoord[1]+2};}`)
+        //newGridAreaDivs.push(`\n .item${count} { grid-area: ${startCoord[0]+1}/${startCoord[1]+1}/${endCoord[0]+2}/${endCoord[1]+2};}`)
+        newGridAreaDivs.push([`\n .item{count}`,`{`,`grid-area:`,`${startCoord[0]+1}/${startCoord[1]+1}/${endCoord[0]+2}/${endCoord[1]+2}`,`;`,`}`])
         setGridAreaDivs(newGridAreaDivs)
 
 
@@ -236,17 +238,17 @@ const Grid = () => {
         //     column-gap:${myGrid.columnGap};
         //     row-gap: ${myGrid.rowGap};  
         // }`  
-        let parent = [`.container { \n`,
-        ` display: grid; \n`,
-        `grid-template-columns: ${myGrid.gridTemplateColumns}; \n`,
-       ` grid-template-rows: ${myGrid.gridTemplateRows}; \n`,
-        `column-gap:${myGrid.columnGap}; \n`,
-       ` row-gap: ${myGrid.rowGap}; \n `,
+        let parent = [`.container`, `{ \n`,
+        ` display`,`:`, `grid`,`; \n`,
+        `grid-template-columns`,`:`, `${myGrid.gridTemplateColumns}`,`; \n`,
+       ` grid-template-rows`,`:`, `${myGrid.gridTemplateRows}`,`; \n`,
+        `column-gap`,`:`,`${myGrid.columnGap}`,`; \n`,
+       ` row-gap`,`:`, `${myGrid.rowGap}`,`; \n `,
        `}`
         ]
-        let innerHTMLCode = [`<div class="parent"> \n`]
+        let innerHTMLCode = [[`<`,`div `, `class`,`=`,`"parent"`,`> \n`]]
        gridAreaClasses.forEach((item)=> innerHTMLCode.push(item))
-       innerHTMLCode.push(`</div>`)
+       innerHTMLCode.push([`</`,`div`,`>`])
         
 
 
@@ -351,6 +353,7 @@ const Grid = () => {
         <GridFields rowGap={rowGap} colGap={colGap} rowNumber={rowNumber} colNumber={colNumber}
         setColNumber={setColNumber} setColGap={setColGap} setRowGap={setRowGap} setRowNumber={setRowNumber}
         />
+        
         <button onClick={()=>handleReset()}>clear grid</button>
         <button onClick={()=>handleGenerateCode()}>generate code</button>
         <button onClick={()=>handleFullReset()}>full reset</button>

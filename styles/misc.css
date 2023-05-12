@@ -124,3 +124,22 @@ h1.title {
   align-items: center;
   gap: 8px;
 }
+
+/* buttons */
+.dark-button {
+    padding: 8px 12px;
+    border: 1px solid var(--bg-4);
+    border-radius: 6px;
+    background-color: var(--bg-2);
+    color: var(--t-1);
+    font-size: var(--font-size-14);
+}
+
+.light-button {
+    padding: 8px 12px;
+    border: 1px solid var(--bg-4);
+    border-radius: 6px;
+    background-color: var(--bg-1);
+    color: var(--t-1);
+    font-size: var(--font-size-14);
+}

@@ -6,7 +6,7 @@ import Title from '../title/title'
 const GridCode = ({items,codeCss,codeHtml}) => {
     const [isCss, setIsCss]=useState(false)
     const [clicked,setClicked]=useState(false)
-    console.log(codeCss,'css',codeHtml,'html',items,'items')
+    console.log(codeHtml,'html',items,'items',codeHtml.slice(1,codeHtml.length-1),"slices")
     if (items.length===0){
         return null
     }
@@ -51,10 +51,10 @@ const GridCode = ({items,codeCss,codeHtml}) => {
         {/* copy to clipboard */}
         <div className='button-flex'>
         <button 
-        className='toggle-code-language'
+        className='dark-button'
          onClick={()=>setIsCss((prev)=>!prev)}>view {!isCss? 'Css' : 'Html'}</button>
 
-          <button className='copy-button' onClick={()=>handleCopy()}>{clicked? 'Copied!':'Copy to clipboard'}</button>
+          <button className='light-button' onClick={()=>handleCopy()}>{clicked? 'Copied!':'Copy to clipboard'}</button>
         </div>
         
 
@@ -70,9 +70,37 @@ const GridCode = ({items,codeCss,codeHtml}) => {
               </ul> 
         </div>
         <div className='grid-code-html' style={{display: isCss? 'none':'inline-block'}}>
-           <ul className='code-list'>
-            {codeHtml.map((item)=> (<li className='code-list-item' key={uuidv4()}>{item}</li>) )}
-            </ul>
+           
+          <div class="code-line">
+             <span className='html-1'>{codeHtml[0][0]}</span> 
+             <span className='html-2'>{codeHtml[0][1]}</span> 
+             <span className='html-3'>{codeHtml[0][2]}</span> 
+             <span className='html-4'>{codeHtml[0][3]}</span> 
+             <span className='html-5'>{codeHtml[0][4]}</span> 
+             <span className='html-1'>{codeHtml[0][5]}</span> 
+           </div>
+            { codeHtml.slice(1,codeHtml.length-1).map((item,index)=> (
+              <div className='code-line-inner'>
+                  <span className='html-1'>{item[0]}</span> 
+                  <span className='html-2'>{item[1]}</span>
+                  <span className='html-3'>{item[2]}</span>
+                  <span className='html-4'>{item[3]}</span>
+                  <span className='html-5'>{item[4]}</span>
+                  <span className='html-1'>{item[5]}</span>
+                  <span className='html-1'>{item[6]}</span>
+                  <span className='html-2'>{item[7]}</span>
+                  <span className='html-1'>{item[8]}</span>
+
+              </div>
+
+            ))}
+
+           <div class="code-line">
+             <span className='html-1'>{codeHtml[codeHtml.length-1][0]}</span> 
+             <span className='html-2'>{codeHtml[codeHtml.length-1][1]}</span> 
+             <span className='html-1'>{codeHtml[codeHtml.length-1][2]}</span> 
+            
+           </div>
         </div>
       {/* close page */}
     </div>
