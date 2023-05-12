@@ -31,7 +31,12 @@ header > nav {
 
 
 .header-right {
+    margin-left: 12px;
     margin-right: 24px;
+    cursor: pointer;
+}
+.header-right:hover {
+    color: var(--t-3);
 }
 
 .header-center {
@@ -67,10 +72,16 @@ header > nav {
     width: 270px;
    transform: translateX(-100%);
    transition: var(--transition-1);
-   background-color: aliceblue;
+   background-color:var(--bg-2);
    position: fixed;
    top: 0px;
     left: 0px;
+
+
+    display: flex;
+    flex-direction: column;
+    padding: 0px;
+    box-sizing: border-box;
 }
 .hamburger.open {
     transform: translateX(0%);
@@ -78,14 +89,15 @@ header > nav {
 .hamburger-blur {
     background-color:rgba(56, 57, 59,0.8) ;
     flex: 1 1 auto;
-    width: calc(100vw-270px);
-    height: 100dvh;
+    width: 100vw;
+    height:100dvh;
     cursor: pointer;
     display: none;
     position: fixed;
-    top: 0;
+    top: 0px;
+    right: 0px;
 
 }
 .hamburger-blur.open {
-    display: block;
+    display: flex;
 }

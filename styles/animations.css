@@ -75,3 +75,151 @@ div.loader {
       transform: rotate(-720deg);
     }
   }
+
+  .loading-grid {
+    display: grid;
+    grid-template-columns: repeat(4,40px);
+    grid-template-rows: repeat(4,40px);
+    background-color: inherit;
+    box-sizing: border-box;
+    gap: 2px;
+    border: 1px solid var(--bg-2);
+  }
+
+
+.loading-grid-item1 {
+    background-color: transparent;
+    animation-name: item1;
+    animation-duration: 3.555s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-delay: 0s;
+  }
+@keyframes item1 {
+  0% {
+    background-color: transparent;
+  }
+  100% {
+    background-color:var(--red);
+  }
+}
+
+.loading-grid-item2 {
+  background-color: transparent;
+  animation-name: item2;
+  animation-duration: 3.555s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-delay: 1s;
+}
+@keyframes item2 {
+0% {
+  background-color: transparent;
+}
+100% {
+  background-color: aliceblue;
+}
+}
+
+.loading-grid-item3 {
+  background-color: transparent;
+  animation-name: item3;
+  animation-duration: 3.555s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-delay: 2s;
+}
+@keyframes item3 {
+0% {
+  background-color: transparent;
+}
+100% {
+  background-color: aliceblue;
+}
+}
+
+.loading-grid-item4 {
+  background-color: transparent;
+  animation-name: item4;
+  animation-duration: 3.555s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-delay: 3s;
+}
+@keyframes item4 {
+0% {
+  background-color: transparent;
+}
+100% {
+  background-color: aliceblue;
+}
+}
+
+.loading-grid-item5 {
+  background-color: transparent;
+  animation-name: item5;
+  animation-duration: 3.555s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-delay: 4s;
+}
+@keyframes item5 {
+0% {
+  background-color: transparent;
+}
+100% {
+  background-color: aliceblue;
+}
+}
+
+.loading-grid-item6 {
+  background-color: transparent;
+  animation-name: item6;
+  animation-duration: 3.555s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-delay: 5s;
+}
+@keyframes item6 {
+0% {
+  background-color: transparent;
+}
+100% {
+  background-color: aliceblue;
+}
+}
+
+.loading-grid-item7 {
+  background-color: transparent;
+  animation-name: item7;
+  animation-duration: 3.555s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-delay: 6s;
+}
+@keyframes item7 {
+0% {
+  background-color: transparent;
+}
+100% {
+  background-color: aliceblue;
+}
+}
+
+
+.loading-grid-item8 {
+  background-color: transparent;
+  animation-name: item8;
+  animation-duration: 3.555s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-delay: 7s;
+}
+@keyframes item8 {
+0% {
+  background-color: transparent;
+}
+100% {
+  background-color: aliceblue;
+}
+}
