@@ -21,7 +21,8 @@ const SideTypewriter = () => {
        .start();
        }}
        /> */}
-       Web Developer
+       Built by <a  className='self-anchor'
+       href="https://github.com/williambroberts/grid.git" target='_blank'>William</a>
     </div>
   )
 }

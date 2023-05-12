@@ -1,0 +1,35 @@
+footer {
+    width: 100vw;
+    height: min-content;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    background-color: var(--bg-2);
+    border-top: 1px solid var(--bg-4);
+}
+footer > nav {
+    display: flex;
+    align-items: center;
+}
+
+.footer-anchor {
+    color: var(--t-2);
+    font-size: var(--font-size-20);
+    text-decoration: none;
+    font-weight: 400;
+    transition: var(--transition-1);
+    display: flex;
+    align-items: center;
+}
+.footer-anchor:hover {
+    color: var(--t-3);
+}
+
+.footer-mid {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    align-self: center;
+    display: flex;
+    gap: 0.5rem;
+}

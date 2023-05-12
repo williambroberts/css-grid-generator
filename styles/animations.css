@@ -4,7 +4,7 @@ div.loader {
     height: 100dvh;
     background-color: var(--bg-dt);
     color: var(--bg-1);
-    
+    position: fixed;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -17,7 +17,7 @@ div.loader {
     height: 100px;
     outline: none;
     border-radius: 50%;
-     border: 2px solid var(--bg-1 );
+     border: 2px solid var(--neongreen );
     border-bottom-color: transparent;
     border-left-color: transparent;
    
@@ -50,12 +50,12 @@ div.loader {
     height: 80px;
     outline: none;
     border-radius: 50%;
-     border: 2px solid var(--bg-3);
+     border: 2px solid var(--yellow);
     border-top-color: transparent;
     /* border-right-color: transparent; */
    
     border-bottom: none;
-    color: var(--bg-2);
+    color: var(--frenchred);
     font-size: var(--font-size-20);
     display: flex;
     align-items: center;
@@ -75,6 +75,40 @@ div.loader {
       transform: rotate(-720deg);
     }
   }
+  .half-circle-three {
+    box-sizing: border-box;
+    width: 60px;
+    height: 60px;
+    outline: none;
+    border-radius: 50%;
+     border: 2px solid var(--css);
+    border-top-color: transparent;
+    /* border-right-color: transparent; */
+   
+    border-bottom: none;
+    color: var(--frenchred);
+    font-size: var(--font-size-20);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    animation-name: loadingAnimation3;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    
+  }
+  @keyframes loadingAnimation3 {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(720deg);
+    }
+  }
+
+
+
 
   .loading-grid {
     display: grid;
@@ -117,7 +151,7 @@ div.loader {
   background-color: transparent;
 }
 100% {
-  background-color: aliceblue;
+  background-color: var(--frenchred);
 }
 }
 
@@ -134,7 +168,7 @@ div.loader {
   background-color: transparent;
 }
 100% {
-  background-color: aliceblue;
+  background-color: var(--yellow);
 }
 }
 
@@ -151,7 +185,7 @@ div.loader {
   background-color: transparent;
 }
 100% {
-  background-color: aliceblue;
+  background-color: var(--palegreen);
 }
 }
 
@@ -168,7 +202,7 @@ div.loader {
   background-color: transparent;
 }
 100% {
-  background-color: aliceblue;
+  background-color: var(--seagreen);
 }
 }
 
@@ -185,7 +219,7 @@ div.loader {
   background-color: transparent;
 }
 100% {
-  background-color: aliceblue;
+  background-color: var(--paleblue);
 }
 }
 
@@ -202,7 +236,7 @@ div.loader {
   background-color: transparent;
 }
 100% {
-  background-color: aliceblue;
+  background-color: var(--purple);
 }
 }
 
@@ -220,6 +254,6 @@ div.loader {
   background-color: transparent;
 }
 100% {
-  background-color: aliceblue;
+  background-color: var(--purple-2);
 }
 }

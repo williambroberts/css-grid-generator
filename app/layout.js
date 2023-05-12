@@ -4,9 +4,10 @@ import '../styles/globals.css'
 import '../styles/header.css'
 import "../styles/misc.css"
 import "../styles/grid.css"
+import "../styles/footer.css"
 import "../styles/animations.css"
 import { Inter } from 'next/font/google'
-import Header from '@/components/header/header'
+
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -22,9 +23,8 @@ export default function RootLayout({ children }) {
      
       <body className={inter.className}>
          <ProviderForTheme>
-        <Header/>
-        {children}
-         route footer layout
+         {children}
+        
          </ProviderForTheme>
         </body>
        

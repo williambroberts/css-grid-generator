@@ -34,7 +34,15 @@
     border: 1px solid var(--bg-1);
     box-sizing: border-box;
 }
-
+.self-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    background-color: var(--bg-1);
+    border: 1px solid var(--bg-1);
+    box-sizing: border-box;
+    color: var(--neongreen);
+}
 .self-heading {
     display: flex;
     align-items: flex-start;
@@ -42,17 +50,30 @@
     flex-direction: column;
     text-decoration: none;
     font-weight: 600;
-    color: var(--t-2);
+    color: var(--t-1);
     font-size: var(--font-size-14);
 }
 .self-heading > span {
     line-height: 20px;
+    color: var(--t-1);
 
 }
-.self-profession {
+.self-profession > div {
     font-weight: 400;
     color: var(--t-3);
 }
+
+.self-anchor {
+    text-decoration: underline;
+    font-size: inherit;
+    color: var(--t-3);
+    transition: var(--transition-1);
+   
+}
+.self-anchor:hover {
+    color: var(--t-2);
+}
+
 
 
 .header-mid {

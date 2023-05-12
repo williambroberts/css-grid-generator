@@ -1,7 +1,7 @@
 header {
     font-size: var(--font-size-14);
     width:100vw;
-    background-color: var(--bg-4);
+    background-color: var(--bg-2);
     display: flex;
     height: 80px;
     position: fixed;
@@ -9,7 +9,7 @@ header {
     left:0px;
     padding: 1.5rem 0rem;
     box-sizing: border-box;
-    border-bottom: 1px solid var(--bg-3);
+    border-bottom: 1px solid var(--bg-);
     z-index: 1;
     color: var(--t-2);
     align-items: center;
@@ -100,4 +100,24 @@ header > nav {
 }
 .hamburger-blur.open {
     display: flex;
+}
+
+.page-item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    padding: 8px 12px;
+    gap: 8px;
+}
+
+.hamburger-section-heading {
+    text-transform: uppercase;
+    color: var(--t-3);
+    font-weight: 400;
+    text-align: left;
+    line-height: 1rem;
+    background-color: transparent;
+    border: none;
+    font-size: var(--font-size-11);
 }
