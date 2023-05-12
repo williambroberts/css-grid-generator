@@ -3,6 +3,7 @@ import {v4 as uuidv4} from "uuid"
 import GridFields from './gridFields'
 import colors from './colors2.json'
 import IconSdCard from '../icons/sdcard'
+import GridCode from './gridCode'
 const Grid = () => {
     const [rowNumber,setRowNumber]=useState(0)
     const [colNumber,setColNumber]=useState(0)
@@ -42,6 +43,11 @@ const Grid = () => {
     const [isMouseDown,setIsMouseDown]=useState(false)
     const [cursorType,setCursorType]=useState("grabbing")
     const [cursorType2,setCursorType2]=useState("grabbing")
+
+    const [isGridCodeOpen,setIsGridCodeOpen]=useState(false)
+    const [codeCss,setCodeCss]=useState([])
+    const [codeHtml,setCodeHtml]=useState([])
+    console.log(codeCss[1],'code css here will')
     const getCoordinates = (start, end) => {
         const coordinates = [];
         const rows = Math.abs(end[0] - start[0]) + 1;
@@ -56,9 +62,10 @@ const Grid = () => {
         return coordinates;
       }
 
-    
-
-    console.log(start,end,'yes')
+    useEffect(()=>{
+        document.querySelector('html').style.overflowY= isGridCodeOpen? 'hidden':'scroll'
+       
+    },[isGridCodeOpen])
 
    
 
@@ -226,8 +233,12 @@ const Grid = () => {
             column-gap:${myGrid.columnGap};
             row-gap: ${myGrid.rowGap};  
         }`
-            console.log(parent)
+           
             gridAreaDivs.forEach((item)=>console.log(item))
+            let codeCss = [parent,gridAreaDivs]
+            setCodeCss(codeCss)
+             console.log(codeCss,'codeCss')
+            setIsGridCodeOpen((prev)=>true)
        }
 
 
@@ -321,6 +332,11 @@ const Grid = () => {
         <button onClick={()=>handleReset()}>clear grid</button>
         <button onClick={()=>handleGenerateCode()}>generate code</button>
         <button onClick={()=>handleFullReset()}>full reset</button>
+
+        <div className={`grid-code-container ${isGridCodeOpen? 'open': ''}`}>
+            <GridCode codeCss={codeCss} codeHtml={codeHtml}/>
+            <div className='grid-code-blur' onClick={()=>setIsGridCodeOpen((prev)=>false)}>{codeCss[1].length===0? 'Please make a grid':''}</div>
+        </div>
     </div>
   )
 }
