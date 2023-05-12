@@ -197,12 +197,16 @@ const Grid = () => {
             column-gap:${myGrid.columnGap};
             row-gap: ${myGrid.rowGap};  
         }`
-            console.log('grid',parent,'divs',gridAreaDivs)
+            console.log(parent)
+            gridAreaDivs.forEach((item)=>console.log(item))
        }
 
 
     const handleReset = () => {
         console.log('resetted')
+        setCount(0)
+        //setSelectedDivs([])
+        setGridAreaDivs([])
     }
 
     const handleFullReset = () =>{
