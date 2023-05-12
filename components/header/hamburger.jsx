@@ -1,8 +1,8 @@
 import React from 'react'
 
-const Hamburger = () => {
+const Hamburger = ({isHamburger}) => {
   return (
-    <div className='hamburger'>
+    <div className={`hamburger ${isHamburger? 'open':''}`}>
 
     </div>
   )

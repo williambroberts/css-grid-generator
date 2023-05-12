@@ -42,32 +42,50 @@ header > nav {
     transform: translate(-50%, -0%);
 }
 
-.hamburger-container {
+/* .hamburger-container {
     z-index: 0;
     width: 100vw;
     height: 100dvh;
-    /* transition: var(--transition-1); */
-    display: flex;
+    transition: var(--transition-1);
+    display: none;
     align-items:flex-start;
-    transform: translateX(-100vw);
+    
     position: fixed;
     top: 0px;
     left: 0px;
     background-color: violet;
 }
 .hamburger-container.open {
-    transform: translateX(0vw);
+    display: flex;
 }
+.hamburger-container.open > .hamburger{
+    transform: translateX(0vw);
+} */
+
 .hamburger {
     height: 100dvh;
     width: 270px;
-   
-
+   transform: translateX(-100%);
+   transition: var(--transition-1);
+   background-color: aliceblue;
+   position: fixed;
+   top: 0px;
+    left: 0px;
+}
+.hamburger.open {
+    transform: translateX(0%);
 }
 .hamburger-blur {
     background-color:rgba(56, 57, 59,0.8) ;
     flex: 1 1 auto;
+    width: calc(100vw-270px);
     height: 100dvh;
- cursor: pointer;
+    cursor: pointer;
+    display: none;
+    position: fixed;
+    top: 0;
 
+}
+.hamburger-blur.open {
+    display: block;
 }

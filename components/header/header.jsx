@@ -19,10 +19,10 @@ const Header = () => {
         <span className='header-mid'><ThemeButton/></span>
         <span className='header-right' onClick={()=>setIsHamburger((prev)=>!prev)}>☰</span>
     </nav>
-    <div className={`hamburger-container ${isHamburger? 'open':''}`}>
-    <Hamburger/>
-    <div className='hamburger-blur' onClick={()=>setIsHamburger((prev)=>!prev)}></div>
-    </div>
+    {/* <div className={`hamburger-container ${isHamburger? 'open':''}`}> */}
+    <Hamburger isHamburger={isHamburger}/>
+    <div className={`.hamburger-blur ${isHamburger? 'open':''}`} onClick={()=>setIsHamburger((prev)=>!prev)}></div>
+    {/* </div> */}
    
    </header>
   )
