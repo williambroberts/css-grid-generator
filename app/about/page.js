@@ -25,7 +25,7 @@ const AboutPage = () => {
     <>
     <Header/>
     <main>
-        <PageWrapper>
+        <PageWrapper >
           <Link className={`${inter.className} light-button`} 
           href="/"
           > <IconArrowLeft/> Back</Link>

@@ -17,7 +17,7 @@ div.loader {
     height: 100px;
     outline: none;
     border-radius: 50%;
-     border: 2px solid var(--darkgreen );
+     border: 2px solid var(--bg-1 );
     border-bottom-color: transparent;
     border-left-color: transparent;
    
@@ -50,12 +50,12 @@ div.loader {
     height: 80px;
     outline: none;
     border-radius: 50%;
-     border: 2px solid var(--yellow);
+     border: 2px solid var(--bg-2);
     border-top-color: transparent;
     /* border-right-color: transparent; */
    
     border-bottom: none;
-    color: var(--frenchred);
+    color: var(--t-1);
     font-size: var(--font-size-20);
     display: flex;
     align-items: center;
@@ -81,12 +81,12 @@ div.loader {
     height: 60px;
     outline: none;
     border-radius: 50%;
-     border: 2px solid var(--css);
+     border: 2px solid var(--bg-3);
     border-top-color: transparent;
     /* border-right-color: transparent; */
    
     border-bottom: none;
-    color: var(--red);
+    color: var(--bg-1);
     font-size: var(--font-size-20);
     display: flex;
     align-items: center;

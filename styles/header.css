@@ -49,7 +49,11 @@ header > nav {
     align-items: center;
    gap:0.25rem;
 }
-
+@media (width < 736px){
+    .header-center {
+        display: none;
+    }
+}
 /* .hamburger-container {
     z-index: 0;
     width: 100vw;

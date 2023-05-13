@@ -201,8 +201,8 @@
       margin: auto ;
       align-items: flex-start;
       flex-direction: column;
-      /* padding-left:clamp(0.5rem, 0.156rem + 1.8349vw, 1rem);
-      padding-right:clamp(0.5rem, 0.156rem + 1.8349vw, 1rem); */
+      padding-left:clamp(0.5rem, 0.156rem + 1.8349vw, 1rem);
+      padding-right:clamp(0.5rem, 0.156rem + 1.8349vw, 1rem);
       background-color: transparent;
       /* width:clamp(10.75rem, 0rem + 100vw, 36rem); */
       box-sizing: border-box;
@@ -212,6 +212,7 @@
       margin-top: 1rem;
       gap: 0.5rem;
       margin-bottom: 1rem;
+     
 
     }
 
@@ -241,6 +242,7 @@
     fieldset > input {
       width: 70px;
       margin-right: 0.5rem;
+      outline: none;
     }
 
     .span-light {
