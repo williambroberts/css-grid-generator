@@ -130,7 +130,7 @@ const GridCode = ({items,codeCss,codeHtml,setIsGridCodeOpen}) => {
           </div>
 
           {codeCss[1].map((item)=> (
-            <div className='code-line'>
+            <div key={uuidv4()} className='code-line'>
               <span className='html-2'>{item[0]}</span>
               <span className='html-1'>{item[1]}</span>
               <span className='html-1'>{item[2]}</span>
@@ -153,7 +153,7 @@ const GridCode = ({items,codeCss,codeHtml,setIsGridCodeOpen}) => {
              <span className='html-1'>{codeHtml[0][5]}</span> 
            </div>
             { codeHtml.slice(1,codeHtml.length-1).map((item,index)=> (
-              <div className='code-line-inner'>
+              <div key={uuidv4()} className='code-line-inner'>
                   <span className='html-1'>{item[0]}</span> 
                   <span className='html-2'>{item[1]}</span>
                   <span className='html-3'>{item[2]}</span>
