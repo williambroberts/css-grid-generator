@@ -2,9 +2,18 @@ import React, { useEffect, useState } from 'react'
 import {v4 as uuidv4} from "uuid"
 import GridFields from './gridFields'
 import colors from './colors2.json'
-
+import Link from 'next/link'
 import GridCode from './gridCode'
-
+import IconSettingsOutline from '../icons/settings'
+import ContentBox from '../pageComponents/contentBox/contentbox'
+import Intro from '../pageComponents/intro/intro'
+import Paragraph from '../pageComponents/paragraph'
+import IconBxLinkExternal from '../icons/navigation/link'
+import IconClear from '../icons/clear'
+import IconReset from '../icons/reset'
+import { Inter } from 'next/font/google'
+import IconSoftware_layout_header_complex3 from '../icons/grid'
+const inter = Inter({ subsets: ['latin'] })
 
 const Grid = () => {
     const [rowNumber,setRowNumber]=useState(0)
@@ -36,7 +45,7 @@ const Grid = () => {
      const [count,setCount]=useState(0)
     //const currentColor = colors[count+205]
     const currentColor = colors[Math.floor(Math.random()*colors.length)]
-    const initialbgColors = items.map((item)=> '#FFFFFF')
+    const initialbgColors = items.map((item)=> 'var(--bg-2')
     const initialDivText = items.map((item)=>'')
     const [bgColors,setBgColors]=useState([])
     const [DivsText,setDivsText]=useState([])
@@ -289,10 +298,10 @@ const Grid = () => {
     <div className='grid'>
       <div className='grid-container'>
         <div className='grid-item-one' 
-        onMouseDown={()=>setCursorType2('grabbing')}
-        onMouseUp={()=>setCursorType2('grab')}
-        onMouseLeave={()=>setCursorType2('grab')}
-        style={{cursor:`${cursorType2}`}}
+        // onMouseDown={()=>setCursorType2('grabbing')}
+        // onMouseUp={()=>setCursorType2('grab')}
+        // onMouseLeave={()=>setCursorType2('grab')}
+        // style={{cursor:`${cursorType2}`}}
         ></div>
         <div className='grid-item-two' style={{...myGridTwo}}>
         {cols.map((col,index)=>
@@ -325,7 +334,7 @@ const Grid = () => {
         </div>
 
         <div className='grid-box' style={{...myGrid}}>
-            
+            {items.length===0?<span><span>Adjust the <IconSoftware_layout_header_complex3/> settings to make your grid!</span></span>:""}
            {items.map((item,index)=>
            <div key={uuidv4()}
             id={`grid-item-main${index}`}
@@ -352,13 +361,37 @@ const Grid = () => {
         </div>
 
         
-        <GridFields rowGap={rowGap} colGap={colGap} rowNumber={rowNumber} colNumber={colNumber}
+       
+
+
+      <div className='flex-col'>
+         <div className='button-flex'>
+        <button className={`${inter.className} light-button`} onClick={()=>handleReset()}> <IconClear/> clear grid</button>
+        <button className={`${inter.className} dark-button`} onClick={()=>handleFullReset()}><IconReset/> full reset</button>
+        </div>
+        
+        <button className={`${inter.className} color-button`} onClick={()=>handleGenerateCode()}>generate code</button>
+      </div>
+       
+            
+            <ContentBox>
+                <div className='button-flex'>
+                <span className='icon-span'><IconSettingsOutline/></span>
+                <Intro>
+                    Css Grid Generator  <span className='type-span'>Settings</span>
+                </Intro>
+                </div>
+                <Paragraph>
+                Use the settings below to customize your grid and then <span>generate</span> some code! See the <Link href="/about">about <span><IconBxLinkExternal/></span> </Link> page for more details.
+               </Paragraph>
+
+               <GridFields rowGap={rowGap} colGap={colGap} rowNumber={rowNumber} colNumber={colNumber}
         setColNumber={setColNumber} setColGap={setColGap} setRowGap={setRowGap} setRowNumber={setRowNumber}
         />
-        
-        <button className="dark-button" onClick={()=>handleReset()}>clear grid</button>
-        <button className="light-button" onClick={()=>handleGenerateCode()}>generate code</button>
-        <button className="dark-button" onClick={()=>handleFullReset()}>full reset</button>
+            </ContentBox>
+
+
+
 
         <div className={`grid-code-container ${isGridCodeOpen? 'open': ''}`}>
             <GridCode codeCss={codeCss} codeHtml={codeHtml} items={items}/>

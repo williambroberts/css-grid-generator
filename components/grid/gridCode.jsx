@@ -1,9 +1,11 @@
 'use client'
 import React, { useState } from 'react'
 import {v4 as uuidv4} from "uuid"
-import Intro from '../intro/intro'
-import Title from '../title/title'
+import Intro from '../pageComponents/intro/intro'
+import Title from '../pageComponents/title/title'
 import { Inter } from 'next/font/google'
+import PageWrapper from '../pageComponents/pageWrapper/pageWrapper'
+import IconCopy from '../icons/copy'
 
 
 const inter = Inter({ subsets: ['latin'] })
@@ -49,7 +51,10 @@ const GridCode = ({items,codeCss,codeHtml}) => {
     }
 
   return (
+    <>
+    
     <div className='grid-code'>
+      <PageWrapper>
       {/* back button */}
         <Title name={'Your Code'}/>
         <Intro>
@@ -61,7 +66,9 @@ const GridCode = ({items,codeCss,codeHtml}) => {
         className={`${inter.className} dark-button`}
          onClick={()=>setIsCss((prev)=>!prev)}> <span>view {!isCss? 'Css' : 'Html'}</span></button>
 
-          <button className={`${inter.className} light-button`} onClick={()=>handleCopy()}>{clicked? 'Copied!':'Copy to clipboard'}</button>
+          <button className={`${inter.className} light-button`} 
+          style={{width:`180px`}}
+          onClick={()=>handleCopy()}><IconCopy/>{clicked? 'Copied!':'Copy to clipboard'}</button>
         </div>
         
 
@@ -156,8 +163,10 @@ const GridCode = ({items,codeCss,codeHtml}) => {
            </div>
         </div>
       {/* close page */}
+    </PageWrapper>
     </div>
-  )
+    
+ </> )
 }
 
 export default GridCode

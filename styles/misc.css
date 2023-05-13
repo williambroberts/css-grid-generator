@@ -108,6 +108,8 @@ h1.title {
     letter-spacing: -2px;
     text-decoration: none;
     text-align: left;
+    margin-bottom: 24px;
+    position: relative;
 }
 
 
@@ -126,14 +128,30 @@ h1.title {
 }
 
 /* buttons */
+.button-flex {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.5rem;
+    flex-wrap: nowrap;
+
+}
 .dark-button {
     padding: 8px 12px;
     border: 1px solid var(--bg-4);
     border-radius: 6px;
-    background-color: var(--bg-2);
+    background-color: var(--bg-3);
     color: var(--t-1);
     font-size: var(--font-size-14);
     cursor: pointer;
+    font-weight: 600;
+    line-height: 22px;
+    text-decoration: none;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.25rem;
 }
 
 .light-button {
@@ -144,4 +162,141 @@ h1.title {
     color: var(--t-1);
     font-size: var(--font-size-14);
     cursor: pointer;
+    transition: var(--transition-1);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+    line-height: 22px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.25rem;
 }
+
+.light-button:hover  {
+    border-color: var(--bg-3);
+    color: var(--t-3);
+}
+
+.color-button {
+    padding: 8px 12px;
+    border: 1px solid var(--bg-4);
+    border-radius: 6px;
+    background-color: var(--t-3);
+    color: var(--t-1);
+    font-size: var(--font-size-14);
+    cursor: pointer;
+    font-weight: 600;
+    line-height: 22px;
+    text-decoration: none;
+    transition: var(--transition-1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.25rem;
+    flex: 1 1 auto;
+    width: 100%;
+    box-sizing: border-box;
+}
+.color-button:hover {
+    background-color: var(--purple-2);
+}
+/* content-box */
+.content-box {
+    border-radius: 6px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 0.5rem;
+    padding: 1rem 1.5rem;
+    box-sizing: border-box;
+    border: 1px solid var(--bg-4);
+    background-color: var(--bg-2);
+    flex-direction: column;
+    width: 100%;
+}
+
+
+/* icon span */
+.icon-span {
+    height: 32px;
+    width: 32px;
+    border: 1px solid var(--bg-4);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    color: var(--t-1);
+}
+/* paragraph compoent */
+.paragraph-component {
+    font-size: var(--font-size-14);
+      font-weight: 400;
+      color: var(--t-3);
+      line-height: 1.75rem;
+      font-variant: normal;
+      text-decoration: none;
+      text-align: left;
+      overflow-wrap: break-word;
+      white-space: pre-wrap;
+     
+  }
+  
+  .paragraph-component > span {
+    font-weight: 500;
+    color: var(--t-1);
+    font-size: inherit;
+    font-variant: normal;
+      text-decoration: none;
+      text-align: left;
+      overflow-wrap: break-word;
+      white-space: pre-wrap;
+
+  }
+  .paragraph-component > a {
+    font-weight: 500;
+    color: var(--t-1);
+    font-size: inherit;
+    font-variant: normal;
+      text-decoration: underline;
+      text-align: left;
+      overflow-wrap: break-word;
+      white-space: pre-wrap;
+      display: inline-flex;
+      flex-wrap: nowrap;
+      align-items: center;
+      justify-content: flex-start;
+      transition: var(--transition-1);
+
+  }
+
+  .paragraph-component > a:hover {
+    color: var(--t-3);
+  }
+
+  .type-span {
+    height: 32px;
+    width: min-content;
+    padding: 0px 12px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content:flex-start;
+    border: 1px solid var(--bg-4);
+    box-sizing: border-box;
+    border-radius: 6px;
+    color: var(--t-1);
+    font-weight: 600;
+  }
+
+  /* flex col */
+  .flex-col {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 0.5rem;
+  }

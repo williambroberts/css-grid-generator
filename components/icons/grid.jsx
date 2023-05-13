@@ -1,18 +1,24 @@
-// icon:web-grid-alt | Unicons https://iconscout.com/unicons | Iconscout
+// icon:software_layout_header_complex3 | Linea Iconset https://linea.io/ | Benjamin Sigidi
 import * as React from "react";
 
-function IconWebGridAlt(props) {
+function IconSoftware_layout_header_complex3(props) {
   return (
     <svg
-      viewBox="0 0 24 24"
+      viewBox="0 0 64 64"
       fill="currentColor"
       height="1em"
       width="1em"
       {...props}
     >
-      <path d="M21.5 2h-19a.5.5 0 00-.5.5v19a.5.5 0 00.5.5h19a.5.5 0 00.5-.5v-19a.5.5 0 00-.5-.5zm-10 19H3V9.5h8.5V21zm9.5 0h-8.5V9.5H21V21zm0-12.5H3V3h18v5.5z" />
+      <path
+        fill="none"
+        stroke="currentColor"
+        strokeMiterlimit={10}
+        strokeWidth={2}
+        d="M1 1h62v14H1zM1 15h31v48H1zM32 15h15v48H32zM47 15h16v48H47z"
+      />
     </svg>
   );
 }
 
-export default IconWebGridAlt;
+export default IconSoftware_layout_header_complex3;

@@ -199,7 +199,7 @@
     .page-wrapper {
       display: flex;
       margin: auto ;
-      align-items: center;
+      align-items: flex-start;
       flex-direction: column;
       /* padding-left:clamp(0.5rem, 0.156rem + 1.8349vw, 1rem);
       padding-right:clamp(0.5rem, 0.156rem + 1.8349vw, 1rem); */
@@ -208,5 +208,42 @@
       box-sizing: border-box;
       max-width: 736px;
       width: 100%;
+      height: 100%;
 
+    }
+
+    fieldset {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+      justify-content: flex-start;
+      height: min-content;
+      box-sizing: border-box;
+      padding: 0;
+      border: none;
+      box-sizing: border-box;
+      background-color: transparent;
+      font-size: var(--font-size-14);
+      color: var(--t-2);
+      margin-bottom: 0.25rem;
+    }
+    .fieldset-text {
+      display: flex;
+      gap: 0.25rem;
+      align-items: center;
+      justify-content: flex-start;
+      width: 132px;
+    }
+
+    fieldset > input {
+      width: 70px;
+      margin-right: 0.5rem;
+    }
+
+    .span-light {
+      color: var(--t-3);
+    }
+
+    ::placeholder {
+      color: var(--t-1);
     }
