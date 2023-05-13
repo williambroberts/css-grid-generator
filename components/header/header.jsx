@@ -3,6 +3,7 @@ import React, { useEffect,useState } from 'react'
 import ThemeButton from '../themes/themeButton'
 import Hamburger from './hamburger'
 import SelfOut from '../self/selfOut'
+import IconSoftware_layout_header_complex3 from '../icons/grid'
 
 const Header = () => {
   const [isHamburger,setIsHamburger]=useState(false)
@@ -15,7 +16,7 @@ const Header = () => {
    <header>
     <nav className='header-nav'>
         <span className='header-self'><SelfOut/></span>
-        <span className='header-center'>CSS Grid Generator</span>
+        <span className='header-center'>CSS Grid Generator <IconSoftware_layout_header_complex3/></span>
         <span className='header-mid'><ThemeButton/></span>
         <span className='header-right' onClick={()=>setIsHamburger((prev)=>!prev)}>☰</span>
     </nav>

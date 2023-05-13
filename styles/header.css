@@ -45,6 +45,9 @@ header > nav {
     left: 50%;
     align-self: center;
     transform: translate(-50%, -0%);
+    display: flex;
+    align-items: center;
+   gap:0.25rem;
 }
 
 /* .hamburger-container {
