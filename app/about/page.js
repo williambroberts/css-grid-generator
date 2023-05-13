@@ -101,6 +101,9 @@ const AboutPage = () => {
                  </a>.
                   Fork it if you wish. <FlexRow>Thanks<IconGitea style={{color:`var(--themecolor)`}}/></FlexRow>
               </Paragraph>
+              <Link className={`${inter.className} light-button`} 
+          href="/"
+          > <IconArrowLeft/> Back</Link>
         </PageWrapper>
     </main>
     <Footer/>

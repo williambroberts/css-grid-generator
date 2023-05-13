@@ -2,7 +2,7 @@
 div.loader {
     width: 100vw;
     height: 100dvh;
-    background-color: var(--bg-b);
+    background-color: #1c1c1cf2;
     color: var(--bg-1);
     position: fixed;
     display: flex;
@@ -17,7 +17,7 @@ div.loader {
     height: 100px;
     outline: none;
     border-radius: 50%;
-     border: 2px solid var(--neongreen );
+     border: 2px solid var(--darkgreen );
     border-bottom-color: transparent;
     border-left-color: transparent;
    
@@ -86,7 +86,7 @@ div.loader {
     /* border-right-color: transparent; */
    
     border-bottom: none;
-    color: var(--frenchred);
+    color: var(--red);
     font-size: var(--font-size-20);
     display: flex;
     align-items: center;
