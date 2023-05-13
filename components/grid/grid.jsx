@@ -13,6 +13,8 @@ import IconClear from '../icons/clear'
 import IconReset from '../icons/reset'
 import { Inter } from 'next/font/google'
 import IconSoftware_layout_header_complex3 from '../icons/grid'
+import IconCalendarTick from '../icons/code'
+import IconSoftware_pencil from '../icons/pencil'
 const inter = Inter({ subsets: ['latin'] })
 
 const Grid = () => {
@@ -370,7 +372,7 @@ const Grid = () => {
         <button className={`${inter.className} dark-button`} onClick={()=>handleFullReset()}><IconReset/> full reset</button>
         </div>
         
-        <button className={`${inter.className} color-button`} onClick={()=>handleGenerateCode()}>generate code</button>
+        <button className={`${inter.className} color-button`} onClick={()=>handleGenerateCode()}><IconSoftware_pencil/> generatecode</button>
       </div>
        
             
@@ -394,11 +396,13 @@ const Grid = () => {
 
 
         <div className={`grid-code-container ${isGridCodeOpen? 'open': ''}`}>
-            <GridCode codeCss={codeCss} codeHtml={codeHtml} items={items}/>
+            <GridCode codeCss={codeCss} codeHtml={codeHtml} items={items} 
+            setIsGridCodeOpen={setIsGridCodeOpen} 
+            />
             <div className='grid-code-blur' onClick={()=>setIsGridCodeOpen((prev)=>false)}>{codeCss[1]===undefined? 'Please make a grid': items.length===0? 'Please make a grid':''}</div>
         </div>
     </div>
   )
 }
 
-export default Grid
+export default Grid 

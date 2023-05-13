@@ -6,13 +6,16 @@ import Title from '../pageComponents/title/title'
 import { Inter } from 'next/font/google'
 import PageWrapper from '../pageComponents/pageWrapper/pageWrapper'
 import IconCopy from '../icons/copy'
-
-
+import IconFiletypeCss from '../icons/css'
+import IconFiletypeHtml from '../icons/html'
+import Link from 'next/link'
+import IconArrowLeft from '../icons/navigation/left'
+import ContentBox from '../pageComponents/contentBox/contentbox'
 const inter = Inter({ subsets: ['latin'] })
 
 
 
-const GridCode = ({items,codeCss,codeHtml}) => {
+const GridCode = ({items,codeCss,codeHtml,setIsGridCodeOpen}) => {
     const [isCss, setIsCss]=useState(false)
     const [clicked,setClicked]=useState(false)
     console.log(codeCss,'css',items,'items' )
@@ -56,22 +59,32 @@ const GridCode = ({items,codeCss,codeHtml}) => {
     <div className='grid-code'>
       <PageWrapper>
       {/* back button */}
+      <span className={`${inter.className} light-button`}
+
+         onClick={()=>setIsGridCodeOpen((prev)=>!prev)}
+          > <IconArrowLeft/> Back</span>
         <Title name={'Your Code'}/>
         <Intro>
             Here is your code!
         </Intro>
-        {/* copy to clipboard */}
+        
+
+
+
         <div className='button-flex'>
-        <button 
+        <button style={{width:`152px`}}
         className={`${inter.className} dark-button`}
-         onClick={()=>setIsCss((prev)=>!prev)}> <span>view {!isCss? 'Css' : 'Html'}</span></button>
+         onClick={()=>setIsCss((prev)=>!prev)}> {isCss? 
+        <span className='flex-row' ><IconFiletypeHtml/>view html code</span> :  <span className='flex-row'><IconFiletypeCss/> view css code</span>
+
+        }</button>
 
           <button className={`${inter.className} light-button`} 
           style={{width:`180px`}}
-          onClick={()=>handleCopy()}><IconCopy/>{clicked? 'Copied!':'Copy to clipboard'}</button>
+          onClick={()=>handleCopy()}><IconCopy/>{clicked? 'Copied, thank you!':'Copy to clipboard'}</button>
         </div>
         
-
+        <ContentBox>
         <div className='grid-code-css' style={{display: isCss? 'inline-block':'none'}}>
             
           <div className="code-line">
@@ -162,6 +175,7 @@ const GridCode = ({items,codeCss,codeHtml}) => {
             
            </div>
         </div>
+        </ContentBox>
       {/* close page */}
     </PageWrapper>
     </div>

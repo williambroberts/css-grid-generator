@@ -43,7 +43,7 @@
     *  {
       padding:0px;
       margin:0px;
-      
+      --themecolor:#c8bff7;
       
       --hover:#f8f8f8;
       --purple:#c8bff7;
@@ -209,6 +209,8 @@
       max-width: 736px;
       width: 100%;
       height: 100%;
+      margin-top: 1rem;
+      gap: 0.5rem;
 
     }
 

@@ -13,7 +13,7 @@ const SelfOut = () => {
   return (
     <div className='self'>
         <div className='self-top'>
-            <a href="/" className='self-img'><IconSoftware_layout_header_complex3/></a>
+            <a href="/" className='self-img'></a>
             <div className="self-heading">
                 <span>Css Grid Generator</span>
                 {/* <span className={caveat.className} style={{color:'var(--frenchred)'}}>William Roberts</span> */}

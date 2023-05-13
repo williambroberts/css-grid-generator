@@ -43,7 +43,7 @@
     grid-template-columns: 40px minmax(300px,1fr);
     grid-template-rows: 40px minmax(300px,1fr);
     gap:2px;
-    width: 100vw;
+    /* width: 100vw; */
     max-width: 480px;
     background-color: var(--bg-2);
     aspect-ratio: 1/1;
@@ -82,6 +82,7 @@
     width: 100%;
     margin: auto;
     color: var(--t-1);
+    outline: none;
     
 }
 
@@ -107,12 +108,18 @@
     width: 100%;
     margin: auto;
     color: var(--t-1);
+    outline: none;
     
 }
 
 .input-col-item > input:focus {
-    background-color: lightgreen;
+    background-color:var(--themecolor);
 }
+.input-row-item > input:focus {
+    background-color:var(--themecolor);
+}
+
+
 
 .grid-code-container {
     display: flex;
@@ -194,7 +201,7 @@
     color:var(--darkgreen);
 }
 .html-5 {
-    color:var(--sunset);
+    color:var(--darkgreen);
 }
 
 .grid-field-button {
