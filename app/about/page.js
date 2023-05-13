@@ -17,6 +17,7 @@ import IconSettingsOutline from '@/components/icons/settings'
 import IconSoftware_pencil from '@/components/icons/pencil'
 import IconGitea from '@/components/icons/drink'
 import IconBxLinkExternal from '@/components/icons/navigation/link'
+import EmailButton from '@/components/emailButton'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -101,9 +102,14 @@ const AboutPage = () => {
                  </a>.
                   Fork it if you wish. <FlexRow>Thanks<IconGitea style={{color:`var(--themecolor)`}}/></FlexRow>
               </Paragraph>
+
+              <FlexRow>
               <Link className={`${inter.className} light-button`} 
           href="/"
           > <IconArrowLeft/> Back</Link>
+          <EmailButton/>
+              </FlexRow>
+              
         </PageWrapper>
     </main>
     <Footer/>

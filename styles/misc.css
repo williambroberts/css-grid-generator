@@ -338,3 +338,41 @@ h1.title {
     gap: 0.5rem;
     color: var(--t-1);
   } 
+
+  /* email button */
+.email-btn {
+  display: flex;
+  font-size: var(--font-size-14);
+  font-weight: 600;
+  color:var(--t-3) ;
+  background-color:var(--bg-1) ;
+  border: 1px solid var(--bg-4);
+  padding:10px 1.5rem;
+  border-radius: 6px;
+  text-decoration: none;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  align-items: center;
+  justify-content: flex-start;
+  box-sizing: border-box;
+  height: 40px;
+  
+
+}
+.email-btn:hover {
+  border-color: var(--bg-2);
+  color: var(--t-1);
+}
+.email-btn > button {
+  margin-left: 0.5rem;
+  font-size: var(--font-size-14);
+  font-weight: 600;
+  color:var(--t-3);
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+.email-btn:hover > button {
+  color: var(--t-2);
+}
