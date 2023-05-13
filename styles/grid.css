@@ -47,6 +47,8 @@
     max-width: 480px;
     background-color: var(--bg-2);
     aspect-ratio: 1/1;
+    box-sizing: border-box;
+    border: 1px solid var(--t-2);
     
 }
 .grid-box > div {
