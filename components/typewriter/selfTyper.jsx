@@ -1,6 +1,8 @@
 import React from 'react'
 import IconGitea from '../icons/drink'
 import { Noto_Color_Emoji } from 'next/font/google'
+import { Caveat } from 'next/font/google';
+const caveat = Caveat({subsets:['cyrillic'],weight:['400']})
 const noto = Noto_Color_Emoji({subsets:['emoji'],weight:['400']})
 //import Typewriter from "typewriter-effect";
 const SideTypewriter = () => {
@@ -24,8 +26,8 @@ const SideTypewriter = () => {
        .start();
        }}
        /> */}
-       Built by <a  className='self-anchor'
-       href="https://github.com/williambroberts/grid.git" target='_blank'>William</a> <span className={noto.className}>&#x026FA;</span> 
+       Built by <a  className={`${caveat.className} self-anchor`} 
+       href="https://github.com/williambroberts/grid.git" target='_blank'>W R</a> <span className={noto.className}>&#x026FA;</span> 
     </div>
   )
 }
