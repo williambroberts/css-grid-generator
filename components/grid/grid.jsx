@@ -16,6 +16,8 @@ import IconSoftware_layout_header_complex3 from '../icons/grid'
 import IconCalendarTick from '../icons/code'
 import IconSoftware_pencil from '../icons/pencil'
 const inter = Inter({ subsets: ['latin'] })
+import { Noto_Color_Emoji } from 'next/font/google'
+const noto = Noto_Color_Emoji({subsets:['emoji'],weight: ['400']})
 
 const Grid = () => {
     const [rowNumber,setRowNumber]=useState(0)
@@ -365,7 +367,7 @@ const Grid = () => {
         
        
 
-
+            <div className='grid-right'>
       <div className='flex-col'>
          <div className='button-flex'>
         <button className={`${inter.className} light-button`} onClick={()=>handleReset()}> <IconClear/> clear grid</button>
@@ -393,7 +395,7 @@ const Grid = () => {
             </ContentBox>
 
 
-
+            </div>
 
         <div className={`grid-code-container ${isGridCodeOpen? 'open': ''}`}>
             <GridCode codeCss={codeCss} codeHtml={codeHtml} items={items} 

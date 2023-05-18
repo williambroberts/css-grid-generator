@@ -198,6 +198,11 @@
       width: 100%;
     }
 
+  @media (width>1024px) {
+    .grid-wrapper{
+      max-width: 1024px;
+    }
+  }
     .page-wrapper {
       display: flex;
       margin: auto ;
