@@ -18,7 +18,8 @@ import IconSoftware_pencil from '@/components/icons/pencil'
 import IconGitea from '@/components/icons/drink'
 import IconBxLinkExternal from '@/components/icons/navigation/link'
 import EmailButton from '@/components/emailButton'
-
+import { Noto_Color_Emoji } from 'next/font/google'
+const noto = Noto_Color_Emoji({subsets:['emoji'],weight: ['400']})
 const inter = Inter({ subsets: ['latin'] })
 
 const AboutPage = () => {
@@ -100,7 +101,7 @@ const AboutPage = () => {
                  > <span className='normal-anchor-text'>github here </span>
                  <span><IconBxLinkExternal/></span>
                  </a>.
-                  Fork it if you wish. <FlexRow>Thanks<IconGitea style={{color:`var(--themecolor)`}}/></FlexRow>
+                  Fork it if you wish. <FlexRow>Thanks <span className={noto.className}>&#x1F32E;</span></FlexRow>
               </Paragraph>
 
               <FlexRow>

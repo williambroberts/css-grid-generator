@@ -38,7 +38,7 @@
     width: 40px;
     height: 40px;
     border-radius: 6px;
-    background-image:url("../public/images/gridicon2.png") ;
+    /* background-image:url("../public/images/gridicon2.png") ; */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -47,11 +47,26 @@
     box-sizing: border-box;
     color: var(--t-1);
     font-size:38px;
+    background-image: repeating-linear-gradient(transparent 0px, transparent 4px, var(--t-1) 4px, var(--t-1) 5px);
+    
 
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    position: relative;
+}
+
+.hatch {
+  box-sizing: border-box;
+  position: absolute;
+  background-color: transparent;
+  height: 100%;
+  width: 100%;
+  background-image: repeating-linear-gradient(90deg,transparent 0px, transparent 4px, var(--t-1) 4px, var(--t-1) 5px);
+
+
+  
 }
 .self-heading {
     display: flex;
@@ -166,7 +181,7 @@ h1.title {
 .dark-button {
     padding: 8px 12px;
     border: 1px solid var(--bg-4);
-    border-radius: 6px;
+    border-radius: 0px;
     background-color: var(--bg-3);
     color: var(--t-1);
     font-size: var(--font-size-14);
@@ -184,7 +199,7 @@ h1.title {
 .light-button {
     padding: 8px 12px;
     border: 1px solid var(--bg-4);
-    border-radius: 6px;
+    border-radius: 0px;
     background-color: var(--bg-1);
     color: var(--t-1);
     font-size: var(--font-size-14);
@@ -210,7 +225,7 @@ h1.title {
 .color-button {
     padding: 8px 12px;
     border: 1px solid var(--bg-4);
-    border-radius: 6px;
+    border-radius: 0px;
     background-color: var(--t-3);
     color: var(--t-1);
     font-size: var(--font-size-14);
@@ -232,7 +247,7 @@ h1.title {
 }
 /* content-box */
 .content-box {
-    border-radius: 6px;
+    border-radius: 0px;
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
@@ -255,14 +270,14 @@ h1.title {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border-radius: 6px;
+    border-radius: 0px;
     color: var(--themecolor);
 }
 /* paragraph compoent */
 .paragraph-component {
     font-size: var(--font-size-14);
       font-weight: 400;
-      color: var(--t-3);
+      color: var(--t-1);
       line-height: 1.75rem;
       font-variant: normal;
       text-decoration: none;
@@ -349,7 +364,7 @@ h1.title {
   background-color:var(--bg-1) ;
   border: 1px solid var(--bg-4);
   padding:10px 1.5rem;
-  border-radius: 6px;
+  border-radius: 0px;
   text-decoration: none;
   text-align: left;
   cursor: pointer;
