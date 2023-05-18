@@ -37,13 +37,13 @@
 .self-img {
     width: 40px;
     height: 40px;
-    border-radius: 6px;
+    border-radius: 1px;
     /* background-image:url("../public/images/gridicon2.png") ; */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     background-color: var(--bg-1);
-    border: 1px solid var(--bg-1);
+    border: 1px solid var(--t-1);
     box-sizing: border-box;
     color: var(--t-1);
     font-size:38px;
@@ -65,8 +65,14 @@
   width: 100%;
   background-image: repeating-linear-gradient(90deg,transparent 0px, transparent 4px, var(--t-1) 4px, var(--t-1) 5px);
 
-
-  
+}
+.self-img-corner {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  top: 0px;
+  left: 0px;
+  background-color: transparent;
 }
 .self-heading {
     display: flex;
@@ -271,7 +277,7 @@ h1.title {
     align-items: center;
     justify-content: center;
     border-radius: 0px;
-    color: var(--themecolor);
+    color: var(--t-1);
 }
 /* paragraph compoent */
 .paragraph-component {

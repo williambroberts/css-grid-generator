@@ -1,6 +1,7 @@
 import React from 'react'
 import IconGitea from '../icons/drink'
-
+import { Noto_Color_Emoji } from 'next/font/google'
+const noto = Noto_Color_Emoji({subsets:['emoji'],weight:['400']})
 //import Typewriter from "typewriter-effect";
 const SideTypewriter = () => {
   return (
@@ -24,7 +25,7 @@ const SideTypewriter = () => {
        }}
        /> */}
        Built by <a  className='self-anchor'
-       href="https://github.com/williambroberts/grid.git" target='_blank'>William</a> <IconGitea style={{color:`var(--themecolor)`}}/>  
+       href="https://github.com/williambroberts/grid.git" target='_blank'>William</a> <span className={noto.className}>&#x026FA;</span> 
     </div>
   )
 }

@@ -61,11 +61,11 @@
 }
 .grid-box > div {
     cursor: grab;
-
+    background-color: transparent;
+    background-image: repeating-linear-gradient(45deg, transparent 0px, transparent 10px, var(--bg-4) 11px, var(--bg-4) 12px);;
     box-sizing: border-box;
     border: 1px solid var(--t-2);
     color:var(--bg-1);
-    
 }
 
 .grid-item-one {
