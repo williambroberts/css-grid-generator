@@ -17,6 +17,7 @@ import IconCalendarTick from '../icons/code'
 import IconSoftware_pencil from '../icons/pencil'
 const inter = Inter({ subsets: ['latin'] })
 import { Noto_Color_Emoji } from 'next/font/google'
+import OneRem from '../pageComponents/layout/onerem'
 const noto = Noto_Color_Emoji({subsets:['emoji'],weight: ['400']})
 
 const Grid = () => {
@@ -376,7 +377,7 @@ const Grid = () => {
         
         <button className={`${inter.className} color-button`} onClick={()=>handleGenerateCode()}><IconSoftware_pencil/> generatecode</button>
       </div>
-       
+            <OneRem/>
             
             <ContentBox>
                 <div className='button-flex'>
