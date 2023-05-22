@@ -65,7 +65,7 @@ const GridCode = ({items,codeCss,codeHtml,setIsGridCodeOpen}) => {
           > <IconArrowLeft/> Back</span>
         <Title name={'Your Code'}/>
         <Intro>
-            Here is your code!
+            Here is your {isCss? 'CSS': 'HTML'} code!
         </Intro>
         
 
@@ -86,7 +86,7 @@ const GridCode = ({items,codeCss,codeHtml,setIsGridCodeOpen}) => {
         
         <ContentBox>
         <div className='grid-code-css' style={{display: isCss? 'inline-block':'none'}}>
-            
+          
           <div className="code-line">
             <span className='html-2'>{codeCss[0][0]}</span>
             <span className='html-1'>{codeCss[0][1]}</span>
@@ -134,7 +134,7 @@ const GridCode = ({items,codeCss,codeHtml,setIsGridCodeOpen}) => {
               <span className='html-2'>{item[0]}</span>
               <span className='html-1'>{item[1]}</span>
               <span className='html-1'>{item[2]}</span>
-              <span className='html-1'>{item[3]}</span>
+              <span className='html-3'>{item[3]}</span>
               <span className='html-1'>{item[4]}</span>
               <span className='html-1'>{item[5]}</span>
             </div>

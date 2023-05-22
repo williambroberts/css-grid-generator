@@ -185,35 +185,45 @@
 /* code blocks */
 .code-line {
     font-size: var(--font-size-14);
-    background-color: var(--bg-2);
+    background-color:#303841;
     padding-bottom: 0.25rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
 .code-line-inner {
     font-size: var(--font-size-14);
-    background-color: var(--bg-2);
+    background-color: #303841;
     padding-bottom: 0.25rem;
     padding-left: 0.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
 /* < /> */
 .html-1{
-    color: var(--t-2);
+    color:#60b4b4 ;
 }
 /* div */
 .html-2 {
-    color:#C91A09;
+    color:#ec6066;
 }
 /* class */
 .html-3 {
-    color:var(--css);
+    color:#c695c6   ;
 }
 /* = */
 .html-4 {
-    color:#73DCA1;
+    color:#f9ae57;
 }
 .html-5 {
-    color:var(--darkgreen);
+    color:#8dc794;
 }
-
+/* blue:#4780cc;
+red:#ec6066;
+cyan:#60b4b4;
+green:#8dc794;
+background: #303841;
+purple:#c695c6;
+orange:#f9ae57; */
 .grid-field-button {
     height: 32px;
     width: 32px;
@@ -229,6 +239,12 @@
     transition: var(--transition-1);
 }
 .grid-field-button:hover {
-    color: var(--t-3);
-    background-color: var(--bg-1);
+    color: var(--t-1);
+    font-size: var(--font-size-16);
+    background-color: var(--themecolor);
 }
+.grid-code-css,.grid-code-html {
+    padding: 1rem;
+    background-color:#303841 ;
+}
+

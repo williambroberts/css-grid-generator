@@ -101,7 +101,7 @@ const AboutPage = () => {
                  > <span className='normal-anchor-text'>github here </span>
                  <span><IconBxLinkExternal/></span>
                  </a>.
-                  Fork it if you wish. <FlexRow>Thank you <span className={noto.className}>&#x2728;</span></FlexRow>
+                  Fork it if you wish. <FlexRow>Thank you <span className={noto.className}>&#x1F959;</span></FlexRow>
               </Paragraph>
 
               <FlexRow>
