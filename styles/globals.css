@@ -69,6 +69,8 @@
       --bg-dt:#1c1c1cf2;
       --frenchred:#f0695f;
      --navy:#0C2365;
+     --grid:rgba(215, 225, 242, 0.234);
+     --grid2:rgba(215, 225, 242, 0.134);
      --neongreen:#08ffbd; 
       --leetcodeorange:#d16c06;
       --leetcodeorange2:#ffa116;
@@ -183,6 +185,8 @@
       grid-template-columns: 1fr;
       padding-top: 120px;
       
+      background-image: repeating-linear-gradient(transparent 0px 5px, var(--grid) 5px 6px),repeating-linear-gradient(90deg,transparent 0px 5px, var(--grid)5px 6px),radial-gradient(transparent 0%, white 50%);
+      
     }
     .grid-wrapper {
       display: flex;
@@ -219,8 +223,7 @@
       margin-top: 1rem;
       gap: 0.5rem;
       margin-bottom: 1rem;
-     
-
+      
     }
 
     fieldset {
