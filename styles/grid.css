@@ -248,3 +248,6 @@ orange:#f9ae57; */
     background-color:#303841 ;
 }
 
+.icon-tool-c {
+background-color: var(--yellow);
+}
