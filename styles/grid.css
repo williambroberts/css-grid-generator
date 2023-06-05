@@ -62,8 +62,9 @@
 .grid-box > div {
     cursor: grab;
     background-color: transparent;
-    background-image: repeating-linear-gradient(45deg, transparent 0px, transparent 10px, var(--bg-4) 11px, var(--bg-4) 12px);;
     box-sizing: border-box;
+    background-image: repeating-linear-gradient(transparent, var(--grid) 5px 6px),repeating-linear-gradient(90deg,transparent 0px 5px, var(--grid) 5px 6px);
+      
     border: 1px solid var(--t-2);
     color:var(--bg-1);
 }
