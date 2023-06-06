@@ -197,7 +197,7 @@ width: 220px;
 .dark-button {
     padding: 8px 12px;
     border: 1px solid var(--bg-4);
-    border-radius: 0px;
+    border-radius: var(--br);
     background-color: var(--bg-3);
     color: var(--t-1);
     font-size: var(--font-size-14);
@@ -215,7 +215,7 @@ width: 220px;
 .light-button {
     padding: 8px 12px;
     border: 1px solid var(--bg-4);
-    border-radius: 0px;
+    border-radius: var(--br);
     background-color: var(--bg-1);
     color: var(--t-1);
     font-size: var(--font-size-14);
@@ -241,7 +241,7 @@ width: 220px;
 .color-button {
     padding: 8px 12px;
     border: 1px solid var(--bg-4);
-    border-radius: 0px;
+    border-radius:var(--br);
     background-color: var(--t-3);
     color: var(--t-1);
     font-size: var(--font-size-14);
@@ -263,7 +263,7 @@ width: 220px;
 }
 /* content-box */
 .content-box {
-    border-radius: 0px;
+    border-radius:var(--br);
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
@@ -286,7 +286,7 @@ width: 220px;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border-radius: 0px;
+    border-radius:var(--br);
     color: var(--t-1);
 }
 /* paragraph compoent */
@@ -331,7 +331,11 @@ width: 220px;
       transition: var(--transition-1);
 
   }
-
+.paragraph-component > a > span {
+  display: flex;
+  align-items: center;
+  text-decoration: underline;
+}
   .paragraph-component > a:hover {
     color: var(--t-3);
   }
@@ -346,7 +350,7 @@ width: 220px;
     justify-content:flex-start;
     border: 1px solid var(--bg-4);
     box-sizing: border-box;
-    border-radius: 6px;
+    border-radius: var(--br);
     color: var(--t-1);
     font-weight: 600;
   }
@@ -380,7 +384,7 @@ width: 220px;
   background-color:var(--bg-1) ;
   border: 1px solid var(--bg-4);
   padding:10px 1.5rem;
-  border-radius: 0px;
+  border-radius:var(--br);
   text-decoration: none;
   text-align: left;
   cursor: pointer;

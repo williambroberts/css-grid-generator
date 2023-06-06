@@ -13,6 +13,7 @@ header {
     z-index: 1;
     color: var(--t-2);
     align-items: center;
+    box-shadow: var(--box-shadow-3);
 
 }
 
@@ -48,6 +49,7 @@ header > nav {
     display: flex;
     align-items: center;
    gap:0.25rem;
+   font-weight: 400;
 }
 @media (width < 736px){
     .header-center {
@@ -127,7 +129,7 @@ header > nav {
     gap: 8px;
     box-sizing: border-box;
    
-    border-radius: 6px;
+    border-radius:var(--br);
 
     line-height: 1.25rem;
     text-decoration: none;

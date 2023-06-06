@@ -88,55 +88,55 @@ const GridCode = ({items,codeCss,codeHtml,setIsGridCodeOpen}) => {
         <div className='grid-code-css' style={{display: isCss? 'inline-block':'none'}}>
           
           <div className="code-line">
-            <span className='html-2'>{codeCss[0][0]}</span>
-            <span className='html-1'>{codeCss[0][1]}</span>
+            <code className='html-2'>{codeCss[0][0]}</code>
+            <code className='html-1'>{codeCss[0][1]}</code>
           </div>
 
           <div className="code-line-inner">
-            <span className='html-1'>{codeCss[0][2]}</span>
-            <span className='html-2'>{codeCss[0][3]}</span>
-            <span className='html-3'>{codeCss[0][4]}</span>
-            <span className='html-2'>{codeCss[0][5]}</span>
+            <code className='html-1'>{codeCss[0][2]}</code>
+            <code className='html-2'>{codeCss[0][3]}</code>
+            <code className='html-3'>{codeCss[0][4]}</code>
+            <code className='html-2'>{codeCss[0][5]}</code>
           </div>
 
           
           <div className="code-line-inner">
-            <span className='html-1'>{codeCss[0][6]}</span>
-            <span className='html-3'>{codeCss[0][7]}</span>
-            <span className='html-3'>{codeCss[0][8]}</span>
-            <span className='html-3'>{codeCss[0][9]}</span>
+            <code className='html-1'>{codeCss[0][6]}</code>
+            <code className='html-3'>{codeCss[0][7]}</code>
+            <code className='html-3'>{codeCss[0][8]}</code>
+            <code className='html-3'>{codeCss[0][9]}</code>
           </div>
         <div className="code-line-inner">
-            <span className='html-1'>{codeCss[0][10]}</span>
-            <span className='html-3'>{codeCss[0][11]}</span>
-            <span className='html-3'>{codeCss[0][12]}</span>
-            <span className='html-3'>{codeCss[0][13]}</span>
+            <code className='html-1'>{codeCss[0][10]}</code>
+            <code className='html-3'>{codeCss[0][11]}</code>
+            <code className='html-3'>{codeCss[0][12]}</code>
+            <code className='html-3'>{codeCss[0][13]}</code>
           </div>
           <div className="code-line-inner">
-            <span className='html-1'>{codeCss[0][14]}</span>
-            <span className='html-3'>{codeCss[0][15]}</span>
-            <span className='html-3'>{codeCss[0][16]}</span>
-            <span className='html-3'>{codeCss[0][17]}</span>
+            <code className='html-1'>{codeCss[0][14]}</code>
+            <code className='html-3'>{codeCss[0][15]}</code>
+            <code className='html-3'>{codeCss[0][16]}</code>
+            <code className='html-3'>{codeCss[0][17]}</code>
           </div>
           <div className="code-line-inner">
-            <span className='html-1'>{codeCss[0][18]}</span>
-            <span className='html-3'>{codeCss[0][19]}</span>
-            <span className='html-3'>{codeCss[0][20]}</span>
-            <span className='html-3'>{codeCss[0][21]}</span>
+            <code className='html-1'>{codeCss[0][18]}</code>
+            <code className='html-3'>{codeCss[0][19]}</code>
+            <code className='html-3'>{codeCss[0][20]}</code>
+            <code className='html-3'>{codeCss[0][21]}</code>
           </div>
           
           <div className="code-line">
-            <span className='html-1'>{codeCss[0][22]}</span>
+            <code className='html-1'>{codeCss[0][22]}</code>
           </div>
 
           {codeCss[1].map((item)=> (
             <div key={uuidv4()} className='code-line'>
-              <span className='html-2'>{item[0]}</span>
-              <span className='html-1'>{item[1]}</span>
-              <span className='html-1'>{item[2]}</span>
-              <span className='html-3'>{item[3]}</span>
-              <span className='html-1'>{item[4]}</span>
-              <span className='html-1'>{item[5]}</span>
+              <code className='html-2'>{item[0]}</code>
+              <code className='html-1'>{item[1]}</code>
+              <code className='html-1'>{item[2]}</code>
+              <code className='html-3'>{item[3]}</code>
+              <code className='html-1'>{item[4]}</code>
+              <code className='html-1'>{item[5]}</code>
             </div>
 
           ))}
@@ -145,33 +145,33 @@ const GridCode = ({items,codeCss,codeHtml,setIsGridCodeOpen}) => {
         <div className='grid-code-html' style={{display: isCss? 'none':'inline-block'}}>
            
           <div class="code-line">
-             <span className='html-1'>{codeHtml[0][0]}</span> 
-             <span className='html-2'>{codeHtml[0][1]}</span> 
-             <span className='html-3'>{codeHtml[0][2]}</span> 
-             <span className='html-4'>{codeHtml[0][3]}</span> 
-             <span className='html-5'>{codeHtml[0][4]}</span> 
-             <span className='html-1'>{codeHtml[0][5]}</span> 
+             <code className='html-1'>{codeHtml[0][0]}</code> 
+             <code className='html-2'>{codeHtml[0][1]}</code> 
+             <code className='html-3'>{codeHtml[0][2]}</code> 
+             <code className='html-4'>{codeHtml[0][3]}</code> 
+             <code className='html-5'>{codeHtml[0][4]}</code> 
+             <code className='html-1'>{codeHtml[0][5]}</code> 
            </div>
             { codeHtml.slice(1,codeHtml.length-1).map((item,index)=> (
               <div key={uuidv4()} className='code-line-inner'>
-                  <span className='html-1'>{item[0]}</span> 
-                  <span className='html-2'>{item[1]}</span>
-                  <span className='html-3'>{item[2]}</span>
-                  <span className='html-4'>{item[3]}</span>
-                  <span className='html-5'>{item[4]}</span>
-                  <span className='html-1'>{item[5]}</span>
-                  <span className='html-1'>{item[6]}</span>
-                  <span className='html-2'>{item[7]}</span>
-                  <span className='html-1'>{item[8]}</span>
+                  <code className='html-1'>{item[0]}</code> 
+                  <code className='html-2'>{item[1]}</code>
+                  <code className='html-3'>{item[2]}</code>
+                  <code className='html-4'>{item[3]}</code>
+                  <code className='html-5'>{item[4]}</code>
+                  <code className='html-1'>{item[5]}</code>
+                  <code className='html-1'>{item[6]}</code>
+                  <code className='html-2'>{item[7]}</code>
+                  <code className='html-1'>{item[8]}</code>
 
               </div>
 
             ))}
 
            <div class="code-line">
-             <span className='html-1'>{codeHtml[codeHtml.length-1][0]}</span> 
-             <span className='html-2'>{codeHtml[codeHtml.length-1][1]}</span> 
-             <span className='html-1'>{codeHtml[codeHtml.length-1][2]}</span> 
+             <code className='html-1'>{codeHtml[codeHtml.length-1][0]}</code> 
+             <code className='html-2'>{codeHtml[codeHtml.length-1][1]}</code> 
+             <code className='html-1'>{codeHtml[codeHtml.length-1][2]}</code> 
             
            </div>
         </div>

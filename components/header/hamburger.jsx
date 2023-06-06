@@ -8,12 +8,13 @@ import SelfOut from '../self/selfOut'
 const Hamburger = ({isHamburger}) => {
   return (
     <div className={`hamburger ${isHamburger? 'open':''}`}>
+        <SelfOut/>
        <div className='hamburger-pages'>
         <span className='hamburger-section-heading'>PAGES</span>
         <PageItem name={"Home"} link={"/"} icon={<IconHome/>}/>
         <PageItem name={"About"} link={"/about"} icon={<IconInfoSquare/>}/>
        </div>
-        <SelfOut/>
+      
     </div>
   )
 }

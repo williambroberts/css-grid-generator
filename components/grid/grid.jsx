@@ -423,7 +423,7 @@ const Grid = () => {
         <button className={`${inter.className} dark-button`} onClick={()=>handleFullReset()}><IconReset/> full reset</button>
         </div>
         <div className='button-flex-200'>
-        <button className='light-button' onClick={()=>handleUndo()}>undo</button>
+        <button className={`light-button ${inter.className  }`} onClick={()=>handleUndo()}>undo</button>
         <button className={`${inter.className} color-button`} onClick={()=>handleGenerateCode()}><IconSoftware_pencil/> generatecode</button>
         </div>
        
@@ -438,7 +438,7 @@ const Grid = () => {
                 </Intro>
                 </div>
                 <Paragraph>
-                Use the settings below to customize your grid and then <span>generate</span> some code! See the <Link href="/about">about <span><IconBxLinkExternal/></span> </Link> page for more details.
+                Use the settings below to customize your grid and then <span>generate</span> some code! See the <Link href="/about" className='grid-link'>about <span><IconBxLinkExternal/></span> </Link> page for more details.
                </Paragraph>
 
                <GridFields rowGap={rowGap} colGap={colGap} rowNumber={rowNumber} colNumber={colNumber}
