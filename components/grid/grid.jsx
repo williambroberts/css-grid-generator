@@ -418,12 +418,15 @@ const Grid = () => {
 
             <div className='grid-right'>
       <div className='flex-col'>
-         <div className='button-flex'>
+         <div className='button-flex-200'>
         <button className={`${inter.className} light-button`} onClick={()=>handleReset()}> <IconClear/> clear grid</button>
         <button className={`${inter.className} dark-button`} onClick={()=>handleFullReset()}><IconReset/> full reset</button>
         </div>
-        <button className='undo' onClick={()=>handleUndo()}>undo</button>
+        <div className='button-flex-200'>
+        <button className='light-button' onClick={()=>handleUndo()}>undo</button>
         <button className={`${inter.className} color-button`} onClick={()=>handleGenerateCode()}><IconSoftware_pencil/> generatecode</button>
+        </div>
+       
       </div>
             <OneRem/>
             
