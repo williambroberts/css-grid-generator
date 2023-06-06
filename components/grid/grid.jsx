@@ -36,6 +36,7 @@ const Grid = () => {
 
     const [rows,setRows]=useState([])
     const [cols,setCols]=useState([])
+
     //let hexNum = () => {return Math.round((Math.random()*1000000)+1) }
     const divs = items.map((val,index)=>index+1)
     const [start,setStart]=useState(0)
@@ -64,6 +65,11 @@ const Grid = () => {
     const [codeCss,setCodeCss]=useState([])
     const [codeHtml,setCodeHtml]=useState([])
    
+    const [historyCss,setHistoryCss]=useState([])
+    const [historyHtml,setHistoryHtml]=useState([])
+    const [historyDivsText,setHistoryDivsText]=useState([])
+    const [historybgColors,setHistorybgColors]=useState([])
+
     const getCoordinates = (start, end) => {
         const coordinates = [];
         const rows = Math.abs(end[0] - start[0]) + 1;
@@ -206,15 +212,15 @@ const Grid = () => {
         for (let item of indexes){
             
             newbgColors[item]=currentColor
-            //console.log(item,newbgColors)
+            console.log(item,newbgColors)
         }
-       // console.log(newbgColors,'newbgcolors')
+        console.log(newbgColors,'newbgcolors')
         setBgColors(newbgColors)
         let newDivText = DivsText.slice()
         newDivText[indexes[0]]=`${count}`
         setDivsText(newDivText)
 
-        let newGridAreaDivs = gridAreaDivs
+        let newGridAreaDivs = [...gridAreaDivs]
         let newGridAreaClasses = gridAreaClasses.slice()
         //newGridAreaClasses.push(`<div class="item${count}"></div> \n`)
         newGridAreaClasses.push([`<`,`div `,`class`,`=`,`"item${count}"`,`>`,`</`,`div`,`> \n`])
@@ -223,8 +229,21 @@ const Grid = () => {
         newGridAreaDivs.push([`\n .item${count} `,`{ `,`grid-area:`,`${startCoord[0]+1}/${startCoord[1]+1}/${endCoord[0]+2}/${endCoord[1]+2}`,`;`,` }`])
         setGridAreaDivs(newGridAreaDivs)
 
+            console.log("gridAreaDIvs",gridAreaDivs)
+            console.log("gridAreaClassses",gridAreaClasses)
 
-
+        let newCssHistory = historyCss.slice()
+        newCssHistory.push(newGridAreaDivs)
+        setHistoryCss(newCssHistory)
+        let newHtmlHistory = [...historyHtml]
+        newHtmlHistory.push(newGridAreaClasses)
+        setHistoryHtml(newHtmlHistory)
+        let newbgColorsHistory = [...historybgColors]
+        newbgColorsHistory.push(newbgColors)
+        setHistorybgColors(newbgColorsHistory)
+        let newDivTextHistory =[...historyDivsText]
+        newDivTextHistory.push(newDivText)
+        setHistoryDivsText(newDivTextHistory)
 
     }
     const handleMouseDown = (index,e) => {
@@ -247,13 +266,7 @@ const Grid = () => {
        
 
        const handleGenerateCode = () => {
-        // let parent = `.container {
-        //     display: grid;
-        //     grid-template-columns: ${myGrid.gridTemplateColumns};
-        //     grid-template-rows: ${myGrid.gridTemplateRows};
-        //     column-gap:${myGrid.columnGap};
-        //     row-gap: ${myGrid.rowGap};  
-        // }`  
+         
         let parent = [`.container `, `{ \n`,
         ` display`,`:`, `grid`,`; \n`,
         `grid-template-columns`,`:`, `${myGrid.gridTemplateColumns}`,`; \n`,
@@ -289,7 +302,12 @@ const Grid = () => {
         setGridAreaClasses((prev)=>[])
         setBgColors(initialbgColors)
         setDivsText([...initialDivText])
-        console.log('resetted',count,gridAreaDivs,gridAreaClasses,DivsText,initialDivText)
+       
+        setHistoryCss([])
+        setHistoryHtml([])
+        setHistoryDivsText([])
+        setHistorybgColors([])
+         console.log('resetted',count,gridAreaDivs,gridAreaClasses,DivsText,initialDivText,historyCss.length,historyCss)
     }
 
     const handleFullReset = () =>{
@@ -300,6 +318,34 @@ const Grid = () => {
         setColNumber(0)
         console.log(DivsText)
 
+    }
+
+    const handleUndo = ()=>{
+        console.log("css",historyCss.length)
+        console.log("html",historyHtml,historyHtml.length)
+        console.log("divtext",historyDivsText[historyDivsText.length-1],historyDivsText.length)
+        if (historyCss?.length>1){
+            historyDivsText.pop()
+            historyCss.pop()
+            historyHtml.pop()
+            historybgColors.pop()
+            let newDivText = historyDivsText[historyDivsText.length-1]
+            let newGridAreaDivs = historyCss[historyCss.length-1]
+            let newGridAreaClasses = historyHtml[historyHtml.length-1]
+            let newbgcolors = historybgColors[historybgColors.length-1]
+            setBgColors(newbgcolors)
+            setGridAreaClasses(newGridAreaClasses)
+            setGridAreaDivs(newGridAreaDivs)
+            setDivsText(newDivText)
+            setCount((prev)=>prev-1)
+        }else if (historyCss?.length===1) {
+            
+            handleReset()
+        }
+        else{
+            console.log("nothing to undo")
+        }
+        
     }
   return (
     <div className='grid'>
@@ -376,7 +422,7 @@ const Grid = () => {
         <button className={`${inter.className} light-button`} onClick={()=>handleReset()}> <IconClear/> clear grid</button>
         <button className={`${inter.className} dark-button`} onClick={()=>handleFullReset()}><IconReset/> full reset</button>
         </div>
-        
+        <button className='undo' onClick={()=>handleUndo()}>undo</button>
         <button className={`${inter.className} color-button`} onClick={()=>handleGenerateCode()}><IconSoftware_pencil/> generatecode</button>
       </div>
             <OneRem/>
