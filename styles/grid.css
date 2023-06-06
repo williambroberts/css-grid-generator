@@ -1,7 +1,7 @@
 .grid {
    display: flex;
    height: min-content;
-   background-color: var(--bg-1); 
+   background-color: transparent; 
    gap: 1rem;
    flex-direction: column;
    align-items: center;
@@ -26,7 +26,7 @@
     
     width: 100%;
     aspect-ratio: 1/1;
-    border: 1px solid var(--bg-2);
+    border: 1px solid var(--paleblue);
     background-color: var(--bg-2);
     box-sizing: border-box;
     position: relative;
@@ -52,7 +52,7 @@
     grid-template-rows: 40px minmax(300px,1fr);
     gap:2px;
     /* width: 100vw; */
-    max-width: 480px;
+   width:min(100%,480px);
     background-color: var(--bg-2);
     aspect-ratio: 1/1;
     box-sizing: border-box;
@@ -64,8 +64,10 @@
     background-color: transparent;
     box-sizing: border-box;
     background-image: repeating-linear-gradient(transparent, var(--grid) 5px 6px),repeating-linear-gradient(90deg,transparent 0px 5px, var(--grid) 5px 6px);
-      
-    border: 1px solid var(--t-2);
+    
+    border: 1px solid var(--paleblue);
+    border-left: none;
+    border-top: none;
     color:var(--bg-1);
 }
 

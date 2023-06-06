@@ -18,7 +18,7 @@ const inter = Inter({ subsets: ['latin'] })
 const GridCode = ({items,codeCss,codeHtml,setIsGridCodeOpen}) => {
     const [isCss, setIsCss]=useState(false)
     const [clicked,setClicked]=useState(false)
-    console.log(codeCss,'css',items,'items' )
+   // console.log(codeCss,'css',items,'items' )
     if (items.length===0){
         return null
     }
@@ -36,7 +36,7 @@ const GridCode = ({items,codeCss,codeHtml,setIsGridCodeOpen}) => {
         //console.log(theText)
         //navigator.clipboard.writeText(theText)
        
-       console.log(typeof(theText))
+      // console.log(typeof(theText))
         navigator.clipboard.writeText(theText)
 
 
@@ -44,7 +44,7 @@ const GridCode = ({items,codeCss,codeHtml,setIsGridCodeOpen}) => {
         codeHtml.forEach((item)=>theCode+=item)
         let theText = document.getElementsByClassName('grid-code-html')[0].textContent
         navigator.clipboard.writeText(theText)
-        console.log(typeof(theText))
+       // console.log(typeof(theText))
 
       }
      

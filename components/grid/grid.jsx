@@ -288,7 +288,8 @@ const Grid = () => {
         setGridAreaDivs((prev)=>[])
         setGridAreaClasses((prev)=>[])
         setBgColors(initialbgColors)
-        console.log('resetted',count,gridAreaDivs,gridAreaClasses)
+        setDivsText([...initialDivText])
+        console.log('resetted',count,gridAreaDivs,gridAreaClasses,DivsText,initialDivText)
     }
 
     const handleFullReset = () =>{
@@ -297,6 +298,7 @@ const Grid = () => {
         setRowGap(0)
         setRowNumber(0)
         setColNumber(0)
+        console.log(DivsText)
 
     }
   return (

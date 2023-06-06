@@ -125,7 +125,8 @@
     
        --margin-24:clamp(1rem, 0.375rem + 2vw, 1.5rem);
     
-    
+      --br:4px;
+      --br2:8px;
       
       
     }
