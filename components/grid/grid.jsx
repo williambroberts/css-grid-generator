@@ -474,7 +474,9 @@ const Grid = () => {
             <GridCode codeCss={codeCss} codeHtml={codeHtml} items={items} 
             setIsGridCodeOpen={setIsGridCodeOpen} 
             />
-            <div className='grid-code-blur' onClick={()=>setIsGridCodeOpen((prev)=>false)}>{codeCss[1]===undefined? 'Please make a grid': items.length===0? 'Please make a grid':''}</div>
+            <div 
+            data-theme="dark"
+            className='grid-code-blur' onClick={()=>setIsGridCodeOpen((prev)=>false)}>{codeCss[1]===undefined? 'Please make a grid': items.length===0? 'Please make a grid':''}</div>
         </div>
     </div>
   )

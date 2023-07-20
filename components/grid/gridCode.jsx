@@ -75,7 +75,11 @@ const GridCode = ({items,codeCss,codeHtml,setIsGridCodeOpen}) => {
         <button style={{width:`152px`}}
         className={`${inter.className} dark-button`}
          onClick={()=>setIsCss((prev)=>!prev)}> {isCss? 
-        <span className='flex-row' ><IconFiletypeHtml/>view html code</span> :  <span className='flex-row'><IconFiletypeCss/> view css code</span>
+        <span className='flex items-center
+        text-[var(--cp-red)]
+        ' ><IconFiletypeHtml/>view html code</span> :  <span className='flex items-center
+        text-[var(--cp-blue)]
+        '><IconFiletypeCss/> view css code</span>
 
         }</button>
 

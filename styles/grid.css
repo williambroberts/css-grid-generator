@@ -63,9 +63,9 @@
     cursor: grab;
     background-color: transparent;
     box-sizing: border-box;
-    /* background-image: repeating-linear-gradient(transparent, var(--grid) 5px 6px),repeating-linear-gradient(90deg,transparent 0px 5px, var(--grid) 5px 6px); */
-    outline:1px solid var(--cp-bg);
-    outline-offset: -1px;
+    background-image: repeating-linear-gradient(45deg,transparent, var(--grid) 5px 6px),repeating-linear-gradient(-45deg,transparent 0px 5px, var(--grid) 5px 6px);
+    outline:2px solid var(--cp-bg);
+    outline-offset: -3px;
     border: 1px solid var(--cp-purple);
     border-left: none;
     border-top: none;
@@ -161,7 +161,7 @@
 .grid-code {
     height:70dvh;
     width: 100vw;
-    background-color:var(--bg-1);
+    background-color:var(--cp-bg);
     overflow-y: auto;
     overflow-x: auto;
     display: flex;
@@ -182,6 +182,10 @@
     justify-content: center;
     color:var(--t-1)
     
+}
+
+.grid-code-blur:hover{
+    opacity: 0.6;
 }
 
 

@@ -151,9 +151,10 @@
 
   /* title component */
 h1.title {
-    color:var(--t-4);
+    color:var(--cp-red);
     font-size: var(--font-size-48);
     font-weight: 500;
+    @apply flex gap-1;
     letter-spacing: -2px;
     text-decoration: none;
     text-align: left;
