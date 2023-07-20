@@ -1,7 +1,7 @@
 header {
     font-size: var(--font-size-14);
     width:100vw;
-    background-color: var(--bg-2);
+    background-color: var(--bg-1);
     display: flex;
     height: 80px;
     position: fixed;
@@ -48,7 +48,7 @@ header > nav {
     transform: translate(-50%, -0%);
     display: flex;
     align-items: center;
-   gap:0.25rem;
+   gap:0rem;
    font-weight: 400;
 }
 @media (width < 736px){

@@ -438,7 +438,19 @@ const Grid = () => {
                 </Intro>
                 </div>
                 <Paragraph>
-                Use the settings below to customize your grid and then <span>generate</span> some code! See the <Link href="/about" className='grid-link'>about <span><IconBxLinkExternal/></span> </Link> page for more details.
+                    <code className='text-[var(--cp-blue)]'>
+                    Use the settings below to customize your grid and then 
+                    <span className='text-[var(--cp-yellow)] px-1'>generate</span> 
+                    some code! See the 
+                    
+                    <Link href="/about" className='text-[var(--cp-red)]
+                    inline-flex items-center px-0.5 gap-0
+                    hover:underline
+                    '>
+                        about</Link> 
+                        page for more details.
+ 
+                    </code>
                </Paragraph>
 
                <GridFields rowGap={rowGap} colGap={colGap} rowNumber={rowNumber} colNumber={colNumber}

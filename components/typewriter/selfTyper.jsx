@@ -7,27 +7,24 @@ const noto = Noto_Color_Emoji({subsets:['emoji'],weight:['400']})
 //import Typewriter from "typewriter-effect";
 const SideTypewriter = () => {
   return (
-    <div className='flex-row'>
-    {/* <Typewriter
-       options={{
-        deleteSpeed:'natural',
-        loop: true
-      }}
-       onInit={(typewriter)=> {
-  
-       typewriter
+    <div className='flex gap-0 items-center'>
+ <pre style={{color:"var(--cp-yellow)"}}>Built by </pre>
+
+       
+       
+        <a 
+        className={`${caveat.className} self-anchor`} 
+       href="https://github.com/williambroberts/grid.git" target='_blank'>
         
-       .typeString("I build websites")
-         
-       .pauseFor(10000)
-       .deleteAll()
-       .typeString("Web Developer")
-       .pauseFor(2000)
-       .start();
-       }}
-       /> */}
-       Built by <a  className={`${caveat.className} self-anchor`} 
-       href="https://github.com/williambroberts/grid.git" target='_blank'>W R</a> <span className={noto.className}>&#x026FA;</span> 
+        <pre 
+        className='mr-0.5'
+        style={{color:"var(--cp-green)"}}>WR</pre>
+ 
+        </a> <span 
+        
+        className={`h-full
+        flex items-center
+        ${noto.className}`}>&#x026FA;</span> 
     </div>
   )
 }

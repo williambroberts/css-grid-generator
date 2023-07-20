@@ -11,7 +11,9 @@ const GridFields = ({setColGap,colGap,setColNumber,colNumber,setRowGap,rowGap,se
     <div className='grid-fields'>
      <fieldset>
                 <label htmlFor='row-input'>
-                   <span className='fieldset-text'><IconTool/> Rows</span> 
+                   <span className='fieldset-text'>
+                    <IconTool/> <code className='text-[var(--cp-purple)]'>Rows</code>
+                    </span> 
                 </label>
                     <input type="number" min="0" max="12" name="row-input" id="row-input"
                      value={rowNumber} onChange={(e)=>setRowNumber(e.target.value)}
@@ -21,7 +23,9 @@ const GridFields = ({setColGap,colGap,setColNumber,colNumber,setRowGap,rowGap,se
             </fieldset>
             <fieldset>
                 <label htmlFor='col-input'>
-                <span className='fieldset-text'><IconTool/> Columns</span> 
+                <span className='fieldset-text'><IconTool/> 
+                <code className='text-[var(--cp-purple)]'>Columns</code>
+                </span> 
                 </label>
                     <input type="number" min="0" max="12" name="col-input" id="col-input"
                      value={colNumber} onChange={(e)=>setColNumber(e.target.value)}
@@ -32,7 +36,9 @@ const GridFields = ({setColGap,colGap,setColNumber,colNumber,setRowGap,rowGap,se
             <fieldset>
                 <label htmlFor='row-gap'>
                 <span className='fieldset-text'><IconTool/> 
-                Row Gap <span className='span-light'>(px)</span>
+                <code className='text-[var(--cp-purple)]'>Row Gap</code>
+
+                <span className='text-[var(--cp-red)]'>(px)</span>
                  </span> 
                     
                 </label>
@@ -44,9 +50,10 @@ const GridFields = ({setColGap,colGap,setColNumber,colNumber,setRowGap,rowGap,se
             </fieldset>
             <fieldset>
                 <label htmlFor='col-gap'>
-                <span className='fieldset-text'>
-                    <IconTool/> 
-                Column Gap <span className='span-light'>(px)</span>
+                <span className='fieldset-text'><IconTool/> 
+                <code className='text-[var(--cp-purple)]'>Column Gap</code>
+
+                <span className='text-[var(--cp-red)]'>(px)</span>
                  </span> 
                 </label>
                     <input type="number" min="0" max="100" name="col-gap" id="col-gap"

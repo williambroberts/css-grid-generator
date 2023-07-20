@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root { 
     --invert:0;
       --bg-1:#FFFFFF; 
@@ -92,15 +96,29 @@
       --bg-radial:radial-gradient(ellipse at center,#192d38 0,#211f2f 100%);
       --bg-blur:rgba(56, 57, 59,0.8);
     
+
+      --cp-bg:#1d1e22;
+      --cp-red:#d0782a;
+      --cp-yellow:#ddca7e;
+      --cp-green:#96b38a;
+      --cp-purple:#9a8297;
+      --cp-blue:#809bbd;
+      --cp-gold:#a7925a;
     }
     
-    
-    
+    html:focus-within{
+      scroll-behavior: smooth;
+    }
+    @media(prefers-reduced-motion){
+      html{
+        scroll-behavior: auto;
+      }
+    }
     html {
       filter: invert(var(--invert));
       background-color:var(--bg-1);
       color:var(--text-primary); 
-      scroll-behavior: smooth;
+      scroll-behavior: auto;
       /* font-family: Arial,sans-serif; */
       width: 100vw;
       min-height: 100dvh;
@@ -183,12 +201,12 @@
       top:0px;
       flex:1 1 auto;
       height: 100%;
-      background-color: var(--bg-1);
+      background-color:var(--cp-bg);
       display: grid;
       grid-template-columns: 1fr;
       padding-top: 120px;
       
-      background-image: repeating-linear-gradient(transparent, var(--grid) 5px 6px),repeating-linear-gradient(90deg,transparent 0px 5px, var(--grid) 5px 6px);
+      /* background-image: repeating-linear-gradient(transparent, var(--grid) 5px 6px),repeating-linear-gradient(90deg,transparent 0px 5px, var(--grid) 5px 6px); */
       
     }
     .grid-wrapper {
@@ -250,6 +268,7 @@
       align-items: center;
       justify-content: flex-start;
       width: 132px;
+      color: var(--cp-yellow);
     }
 
     fieldset > input {
