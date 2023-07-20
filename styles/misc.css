@@ -200,9 +200,9 @@ width: 220px;
 }
 .dark-button {
     padding: 8px 12px;
-    border: 1px solid var(--bg-4);
+    border: 1px solid var(--cp-gold);
     border-radius: var(--br);
-    background-color: var(--t-3);
+    background-color: var(--t-2);
     color: var(--bg-2);
     font-size: var(--font-size-14);
     cursor: pointer;
@@ -244,10 +244,10 @@ width: 220px;
 
 .color-button {
     padding: 8px 12px;
-    border: 1px solid var(--bg-4);
+    border: 1px solid var(--cp-gold);
     border-radius:var(--br);
-    background-color: var(--t-3);
-    color: var(--t-1);
+    background-color: var(--t-2);
+    color: var(--bg-2);
     font-size: var(--font-size-14);
     cursor: pointer;
     font-weight: 600;
