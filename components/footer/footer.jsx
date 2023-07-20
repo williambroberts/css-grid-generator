@@ -4,7 +4,8 @@ import Icon459Linkedin2 from '../icons/socials/linkedin'
 
 const Footer = () => {
   return (
-    <footer>
+    <footer 
+    data-theme="dark">
       <nav>
     
         <span className='footer-mid'>

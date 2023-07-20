@@ -114,7 +114,7 @@
     margin-left: 0.25rem;
     text-decoration: none;
     font-size: inherit;
-    color: var(--t-3);
+    color: var(--cp-red);
     transition: var(--transition-1);
     cursor: pointer;
 
@@ -151,7 +151,7 @@
 
   /* title component */
 h1.title {
-    color:var(--t-2);
+    color:var(--t-4);
     font-size: var(--font-size-48);
     font-weight: 500;
     letter-spacing: -2px;
@@ -165,7 +165,7 @@ h1.title {
 /* intro component */
 .intro {
     font-size: var(--font-size-16);
-  color: var(--t-2);
+  color: var(--cp-yellow);
   line-height:1.5rem ;
   font-weight:500;
   max-width: 50ch;
@@ -202,8 +202,8 @@ width: 220px;
     padding: 8px 12px;
     border: 1px solid var(--bg-4);
     border-radius: var(--br);
-    background-color: var(--bg-3);
-    color: var(--t-1);
+    background-color: var(--t-3);
+    color: var(--bg-2);
     font-size: var(--font-size-14);
     cursor: pointer;
     font-weight: 600;
@@ -220,8 +220,8 @@ width: 220px;
     padding: 8px 12px;
     border: 1px solid var(--bg-4);
     border-radius: var(--br);
-    background-color: var(--bg-1);
-    color: var(--t-1);
+    background-color: var(--t-2);
+    color: var(--bg-2);
     font-size: var(--font-size-14);
     cursor: pointer;
     transition: var(--transition-1);
@@ -285,19 +285,19 @@ width: 220px;
 .icon-span {
     height: 32px;
     width: 32px;
-    border: 1px solid var(--bg-4);
+    border: 1px solid var(--cp-gold);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     border-radius:var(--br);
-    color: var(--t-1);
+    color: var(--cp-gold);
 }
 /* paragraph compoent */
 .paragraph-component {
     font-size: var(--font-size-14);
       font-weight: 400;
-      color: var(--t-1);
+      color: var(--cp-blue);
       line-height: 1.75rem;
       font-variant: normal;
       text-decoration: none;
@@ -310,7 +310,7 @@ width: 220px;
   
   .paragraph-component > span {
     font-weight: 500;
-    color: var(--t-1);
+    color: var(--cp-purple);
     font-size: inherit;
     font-variant: normal;
       text-decoration: none;
@@ -321,7 +321,7 @@ width: 220px;
   }
   .paragraph-component > a {
     font-weight: 500;
-    color: var(--t-1);
+    color: var(--cp-red);
     font-size: inherit;
     font-variant: normal;
       text-decoration: underline;
@@ -355,7 +355,7 @@ width: 220px;
     border: 1px solid var(--bg-4);
     box-sizing: border-box;
     border-radius: var(--br);
-    color: var(--t-1);
+    color: var(--cp-red);
     font-weight: 600;
   }
 

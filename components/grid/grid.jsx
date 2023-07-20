@@ -434,7 +434,16 @@ const Grid = () => {
                 <div className='button-flex'>
                 <span className='icon-span'><IconSettingsOutline/></span>
                 <Intro>
-                    Css Grid Generator  <span className='type-span'>Settings</span>
+                    <code
+                    className='
+                    flex items-center
+                    text-[var(--cp-green)]'
+                    >
+                        <pre
+                        className='text-[var(--cp-yellow)]'
+                        >CSS </pre>
+                    
+                     GRID GENERATOR</code> <code className='type-span'>Settings</code>
                 </Intro>
                 </div>
                 <Paragraph>

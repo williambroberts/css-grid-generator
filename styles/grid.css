@@ -26,8 +26,8 @@
     
     width: 100%;
     aspect-ratio: 1/1;
-    border: 1px solid var(--paleblue);
-    background-color: var(--bg-2);
+    border: 1px solid var(--cp-gold);
+    background-color: transparent;
     box-sizing: border-box;
     position: relative;
 }
@@ -53,7 +53,7 @@
     gap:2px;
     /* width: 100vw; */
    width:min(100%,480px);
-    background-color: var(--bg-2);
+    background-color: var(--bg-4);
     aspect-ratio: 1/1;
     box-sizing: border-box;
     border: 1px solid var(--t-2);
@@ -63,9 +63,10 @@
     cursor: grab;
     background-color: transparent;
     box-sizing: border-box;
-    background-image: repeating-linear-gradient(transparent, var(--grid) 5px 6px),repeating-linear-gradient(90deg,transparent 0px 5px, var(--grid) 5px 6px);
-    
-    border: 1px solid var(--paleblue);
+    /* background-image: repeating-linear-gradient(transparent, var(--grid) 5px 6px),repeating-linear-gradient(90deg,transparent 0px 5px, var(--grid) 5px 6px); */
+    outline:1px solid var(--cp-bg);
+    outline-offset: -1px;
+    border: 1px solid var(--cp-purple);
     border-left: none;
     border-top: none;
     color:var(--bg-1);
@@ -228,6 +229,7 @@ background: #303841;
 purple:#c695c6;
 orange:#f9ae57; */
 .grid-field-button {
+    
     height: 32px;
     width: 32px;
     border: 1px solid var(--bg-4);
@@ -236,8 +238,8 @@ orange:#f9ae57; */
     align-items: center;
     justify-content: center;
     border-radius: var(--br);
-    color: var(--t-1);
-    background-color: var(--bg-2);
+    color: var(--bg-2);
+    background-color: var(--t-4);
     cursor: pointer;
     transition: var(--transition-1);
 }

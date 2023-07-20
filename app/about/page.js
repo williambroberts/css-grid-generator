@@ -47,7 +47,9 @@ const AboutPage = () => {
                   <IconSpan>
                     <IconClear/>
                   </IconSpan>
-                  Clear Grid Button
+                  <div className='text-[var(--cp-red)]'>
+                  Clear grid button
+                    </div>
                 </FlexRow>
                 <Paragraph>
                   This button clears all individual <span>Click and drag</span> selections from the grid. The rows and columns will be <span>unchanged</span>. The Html and Css code will update automatically.
@@ -60,7 +62,10 @@ const AboutPage = () => {
                   <IconSpan>
                     <IconReset/>
                   </IconSpan>
+                  <div className='text-[var(--cp-yellow)]'>
                   Full Reset Button
+                    </div>
+                 
                 </FlexRow>
                 <Paragraph>
                   This button removes <span>all</span> user inputs and the corresponding Html and Css code.
@@ -73,7 +78,9 @@ const AboutPage = () => {
                   <IconSpan>
                     <IconSoftware_pencil/>
                   </IconSpan>
-                  Generate Code Button
+                  <div className='text-[var(--cp-green)]'>
+                    Generate Code Button
+                    </div>
                 </FlexRow>
                 <Paragraph>
                   This button generates the <span>Html and Css </span> code for you grid which you can then <span>copy</span> into your own code.
@@ -85,7 +92,10 @@ const AboutPage = () => {
                   <IconSpan>
                     <IconSettingsOutline/>
                   </IconSpan>
+                  <div className='text-[var(--cp-yellow)]'>
                   Settings Panel
+                    </div>
+                 
                 </FlexRow>
                 <Paragraph>
                  This panel allows the user to adjust the number of <span>rows, columns</span> (the max is 12 for each) and the <span>row gap and column gap</span> (in px).
@@ -94,14 +104,15 @@ const AboutPage = () => {
               <Paragraph>
                 This Project was built with
                  <a href="https://nextjs.org/"
-                 className='normal-anchor' target='_blank'> <span className='normal-anchor-text'>Next Js</span> <span><IconBxLinkExternal/></span> </a>.
+                 className={`normal-anchor text-[var(--cp-red)]`} target='_blank'> <span className='normal-anchor-text'>Next Js</span> <span><IconBxLinkExternal/></span> </a>.
                  View the code on  
                   <a href="https://github.com/williambroberts/grid.git"
                  className='normal-anchor' target='_blank'
                  > <span className='normal-anchor-text'>github here </span>
                  <span><IconBxLinkExternal/></span>
                  </a>.
-                  Fork it if you wish. <FlexRow>Thank you <span className={noto.className}>&#x1F959;</span></FlexRow>
+                  Fork it if you wish. <FlexRow>
+                    <code className='text-[var(--cp-green)]'>Thank you</code> <span className={noto.className}>&#x1F959;</span></FlexRow>
               </Paragraph>
 
               <FlexRow>
