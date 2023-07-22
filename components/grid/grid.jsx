@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useMemo, useState } from 'react'
 import {v4 as uuidv4} from "uuid"
 import GridFields from './gridFields'
 import colors from './colors2.json'
@@ -26,8 +26,10 @@ const Grid = () => {
     const [colNumber,setColNumber]=useState(0)
     const [rowGap,setRowGap]=useState(0)
     const [colGap,setColGap]=useState(0)
-    
-    const items = Array(rowNumber*colNumber).fill(0)
+    const items  = useMemo(()=>{
+        return Array(rowNumber*colNumber).fill(0)
+    },[rowNumber,colNumber])
+    //const items = Array(rowNumber*colNumber).fill(0)
     const therows = Array(Number(rowNumber)).fill("1fr")
     const thecolumns = Array(Number(colNumber)).fill("1fr")
     
@@ -356,6 +358,11 @@ const Grid = () => {
         }
         
     }
+
+    useEffect(()=>{
+        console.log("length changed",items?.length)
+        handleReset()
+    },[items?.length])
   return (
     <div className='grid'>
       <div className='grid-container'>
@@ -409,7 +416,7 @@ const Grid = () => {
                 gridArea:`${gridAreaDivs[index][3]}`}}
             key={uuidv4()}>
 
-                <span>{item[4]}</span>
+                <span>{gridAreaClasses[index][4]}</span>
                 {/* <img
                 className=''
                 sizes='(100%)'
