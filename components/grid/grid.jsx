@@ -67,7 +67,7 @@ const Grid = () => {
     const [isGridCodeOpen,setIsGridCodeOpen]=useState(false)
     const [codeCss,setCodeCss]=useState([])
     const [codeHtml,setCodeHtml]=useState([])
-   
+   const [disableUndo,setDisableUndo]=useState(true)
     const [historyCss,setHistoryCss]=useState([])
     const [historyHtml,setHistoryHtml]=useState([])
     const [historyDivsText,setHistoryDivsText]=useState([])
@@ -193,6 +193,7 @@ const Grid = () => {
        
     }
     const handleMouseUp = (index,e)=>{
+        setDisableUndo(false)
         setIsMouseDown((prev)=>false)
         console.log(isMouseDown,"mouse is up",index,selectedDivs,'selectedDvs')
         setSelectedDivs([])
@@ -336,6 +337,7 @@ const Grid = () => {
         console.log("html",historyHtml,historyHtml.length)
         console.log("divtext",historyDivsText[historyDivsText.length-1],historyDivsText.length)
         if (historyCss?.length>1){
+            
             historyDivsText.pop()
             historyCss.pop()
             historyHtml.pop()
@@ -350,10 +352,11 @@ const Grid = () => {
             setDivsText(newDivText)
             setCount((prev)=>prev-1)
         }else if (historyCss?.length===1) {
-            
+            setDisableUndo(true)
             handleReset()
         }
         else{
+            setDisableUndo(true)
             console.log("nothing to undo")
         }
         
@@ -362,6 +365,7 @@ const Grid = () => {
     useEffect(()=>{
         console.log("length changed",items?.length)
         handleReset()
+        
     },[items?.length])
   return (
     <div className='grid'>
@@ -463,7 +467,10 @@ const Grid = () => {
         <button className={`${inter.className} dark-button`} onClick={()=>handleFullReset()}><IconReset/> full reset</button>
         </div>
         <div className='button-flex-200'>
-        <button className={`light-button ${inter.className  }`} onClick={()=>handleUndo()}>undo</button>
+        <button 
+        id="UNDO__btn"
+        disabled={disableUndo}
+        className={`light-button ${inter.className  }`} onClick={()=>handleUndo()}>undo</button>
         <button className={`${inter.className} color-button`} onClick={()=>handleGenerateCode()}><IconSoftware_pencil/> generatecode</button>
         </div>
        

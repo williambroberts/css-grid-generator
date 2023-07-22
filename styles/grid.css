@@ -305,3 +305,6 @@ orange:#f9ae57; */
 background-color: var(--yellow);
 }
 
+button[id="UNDO__btn"]:disabled{
+    opacity: 0.5;
+}
