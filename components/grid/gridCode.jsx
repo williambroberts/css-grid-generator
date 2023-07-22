@@ -18,7 +18,7 @@ const inter = Inter({ subsets: ['latin'] })
 const GridCode = ({items,codeCss,codeHtml,setIsGridCodeOpen}) => {
     const [isCss, setIsCss]=useState(false)
     const [clicked,setClicked]=useState(false)
-   // console.log(codeCss,'css',items,'items' )
+    //console.log(codeCss,'css',items,'items',codeHtml,"codehtml" )
     if (items.length===0){
         return null
     }

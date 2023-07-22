@@ -18,6 +18,7 @@ import IconSoftware_pencil from '../icons/pencil'
 const inter = Inter({ subsets: ['latin'] })
 import { Noto_Color_Emoji } from 'next/font/google'
 import OneRem from '../pageComponents/layout/onerem'
+import { generateImageUrls } from '@/app/ClientFunctions/ClientFunctions'
 const noto = Noto_Color_Emoji({subsets:['emoji'],weight: ['400']})
 
 const Grid = () => {
@@ -45,7 +46,7 @@ const Grid = () => {
     const startCoord = [Math.floor(selectedDivs[0]/colNumber),(selectedDivs[0]%colNumber)]
     const endCoord = [Math.floor(selectedDivs[selectedDivs.length-1]/colNumber),(selectedDivs[selectedDivs.length-1]%colNumber)]
     const realSelctedDivs = []
-
+    const [imageUrls,setImageUrls]=useState([])
     const [gridAreaDivs,setGridAreaDivs]=useState([])
     const [gridAreaClasses,setGridAreaClasses]=useState([])
      const [count,setCount]=useState(0)
@@ -229,9 +230,15 @@ const Grid = () => {
         newGridAreaDivs.push([`\n .item${count} `,`{ `,`grid-area:`,`${startCoord[0]+1}/${startCoord[1]+1}/${endCoord[0]+2}/${endCoord[1]+2}`,`;`,` }`])
         setGridAreaDivs(newGridAreaDivs)
 
-            console.log("gridAreaDIvs",gridAreaDivs)
-            console.log("gridAreaClassses",gridAreaClasses)
+            console.log("newgridAreaDIvs🌽",newGridAreaDivs)
+            console.log("newgridAreaClassses",newGridAreaClasses)
+        let newImageUrls = generateImageUrls(imageUrls)
+        setImageUrls(newImageUrls)
+        //handle generate grid just for display 
+        //handle convert to grid area string and classes as their names
 
+
+        
         let newCssHistory = historyCss.slice()
         newCssHistory.push(newGridAreaDivs)
         setHistoryCss(newCssHistory)
@@ -246,6 +253,8 @@ const Grid = () => {
         setHistoryDivsText(newDivTextHistory)
 
     }
+
+  
     const handleMouseDown = (index,e) => {
         setIsMouseDown((prev)=>true)
         console.log(isMouseDown,"mouse down",index)
@@ -285,7 +294,7 @@ const Grid = () => {
            
         let codeCss = [parent,gridAreaDivs]
         setCodeCss(codeCss)
-        console.log(codeCss,'codeCss',innerHTMLCode,'htmlcode')
+        console.log(codeCss,'codeCss🧧',innerHTMLCode,'htmlcode🧧')
         setIsGridCodeOpen((prev)=>true)
         setCodeHtml(innerHTMLCode)
 
@@ -319,7 +328,7 @@ const Grid = () => {
         console.log(DivsText)
 
     }
-
+    console.log("🥩🥩")
     const handleUndo = ()=>{
         console.log("css",historyCss.length)
         console.log("html",historyHtml,historyHtml.length)
@@ -385,8 +394,32 @@ const Grid = () => {
             </form>
             )}
         </div>
+        
 
         <div className='grid-box' style={{...myGrid}}>
+        <div className='display__grid__box'
+        style={{...myGrid}}
+           
+        >
+          {gridAreaClasses.map((item,index)=>
+          (<div 
+            className=''
+            style={{
+                backgroundImage:`url("https://picsum.photos/${imageUrls[index]}")`,
+                gridArea:`${gridAreaDivs[index][3]}`}}
+            key={uuidv4()}>
+
+                <span>{item[4]}</span>
+                {/* <img
+                className=''
+                sizes='(100%)'
+                loading='lazy'
+                alt=""
+                src={`https://picsum.photos/${imageUrls[index]}`}
+                /> */}
+            </div>)
+          )}  
+</div>
             {items.length===0?<span><span>Adjust the <IconSoftware_layout_header_complex3/> settings to make your grid!</span></span>:""}
            {items.map((item,index)=>
            <div key={uuidv4()}
@@ -405,7 +438,7 @@ const Grid = () => {
              
            )}
            
-           
+        
 
 
             </div>
